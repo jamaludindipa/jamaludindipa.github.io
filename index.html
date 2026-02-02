@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jamaludin Dipa - Full Stack Developer Portfolio">
+    <title>Jamaludin Dipa - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .gallery-img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slider-track img {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 10;
+        }
+        .slider-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .slider-btn.prev {
+            left: 8px;
+        }
+        .slider-btn.next {
+            right: 8px;
+        }
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .slider-dot.active {
+            background: rgba(0,0,0,0.7);
+        }
+        .project-slider-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .project-slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .project-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 4px;
+        }
+        .project-slide .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .project-slide .grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .project-slide .grid img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery-modal.active {
+            display: flex;
+        }
+        .gallery-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .gallery-modal-image {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        .gallery-modal-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            font-size: 1.5rem;
+        }
+        .gallery-modal-btn:hover {
+            background: rgba(255,255,255,0.4);
+        }
+        .gallery-modal-btn.prev {
+            left: -70px;
+        }
+        .gallery-modal-btn.next {
+            right: -70px;
+        }
+        .gallery-modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .gallery-modal-close:hover {
+            color: #ccc;
+        }
+        .gallery-modal-counter {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">JD</a>
+            <div class="flex gap-6">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">System Apps</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <div class="w-32 h-32 mx-auto mb-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-5xl font-bold text-white shadow-lg">
+                JD
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Jamaludin Dipa
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">IT Infra & System Dev</p>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Passionate about building efficient infrastructure and creating impactful system solutions using AI agent for full development.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all">
+                    View Projects
+                </a>
+                <a href="https://github.com/jamaludindipa" target="_blank" class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 transition-all">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 fade-in">System Apps Project</h2>
+            <p class="text-gray-600 text-center mb-16 fade-in">A collection of my recent work and achievements</p>
+            
+            <div class="space-y-16">
+                
+                <!-- Ceklist Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-blue-600 text-sm font-semibold mb-2">WEB APPLICATION</div>
+                            <h3 class="text-3xl font-bold mb-4">Ceklist Management System</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Comprehensive checklist and task management application with PM planner, asset tracking, and analytics dashboard.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">jQuery</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="ceklist">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h19_13.webp" alt="Ceklist 1" onclick="openGallery('ceklist', 0)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h19_24.webp" alt="Ceklist 2" onclick="openGallery('ceklist', 1)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h19_32.webp" alt="Ceklist 3" onclick="openGallery('ceklist', 2)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h19_42.webp" alt="Ceklist 4" onclick="openGallery('ceklist', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h19_58.webp" alt="Ceklist 5" onclick="openGallery('ceklist', 4)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h20_06.webp" alt="Ceklist 6" onclick="openGallery('ceklist', 5)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h20_18.webp" alt="Ceklist 7" onclick="openGallery('ceklist', 6)">
+                                            <img src="projectimg/Ceklist/2026-02-02_12h20_28.webp" alt="Ceklist 8" onclick="openGallery('ceklist', 7)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('ceklist', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('ceklist', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="ceklist-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT Ticket Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-purple-600 text-sm font-semibold mb-2">TICKETING SYSTEM</div>
+                            <h3 class="text-3xl font-bold mb-4">IT Ticket Management</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Advanced ticketing platform with face recognition, push notifications, and real-time status tracking.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Flask</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">OpenCV</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="ticket">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_47.webp" alt="IT Ticket 1" onclick="openGallery('ticket', 0)">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_50.webp" alt="IT Ticket 2" onclick="openGallery('ticket', 1)">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_56.webp" alt="IT Ticket 3" onclick="openGallery('ticket', 2)">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_12.webp" alt="IT Ticket 4" onclick="openGallery('ticket', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_32.webp" alt="IT Ticket 5" onclick="openGallery('ticket', 4)">
+                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_48.webp" alt="IT Ticket 6" onclick="openGallery('ticket', 5)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('ticket', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('ticket', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="ticket-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Dashboard Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-green-600 text-sm font-semibold mb-2">DASHBOARD</div>
+                            <h3 class="text-3xl font-bold mb-4">Aplikasi Stamping</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Real-time production monitoring system with material tracking, machine monitoring, and advanced reporting.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">Chart.js</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">Tailwind CSS</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="production">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Production Stamping/2026-02-02_12h34_25.webp" alt="Production 1" onclick="openGallery('production', 0)">
+                                            <img src="projectimg/Production Stamping/2026-02-02_12h34_52.webp" alt="Production 2" onclick="openGallery('production', 1)">
+                                            <img src="projectimg/Production Stamping/2026-02-02_12h35_00.webp" alt="Production 3" onclick="openGallery('production', 2)">
+                                            <img src="projectimg/Production Stamping/2026-02-02_12h35_10.webp" alt="Production 4" onclick="openGallery('production', 3)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('production', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('production', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="production-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OEE Welding Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-orange-600 text-sm font-semibold mb-2">MANUFACTURING</div>
+                            <h3 class="text-3xl font-bold mb-4">OEE Welding Single Product</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Overall Equipment Effectiveness monitoring system for welding operations with real-time analytics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Chart.js</span>
+                                <span class="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">IoT Gateway UPC UA</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">PLC Omron</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="oee">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h17_51.webp" alt="OEE 1" onclick="openGallery('oee', 0)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_01.webp" alt="OEE 2" onclick="openGallery('oee', 1)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_07.webp" alt="OEE 3" onclick="openGallery('oee', 2)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_13.webp" alt="OEE 4" onclick="openGallery('oee', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_16.webp" alt="OEE 5" onclick="openGallery('oee', 4)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_19.webp" alt="OEE 6" onclick="openGallery('oee', 5)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_22.webp" alt="OEE 7" onclick="openGallery('oee', 6)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_29.webp" alt="OEE 8" onclick="openGallery('oee', 7)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_34.webp" alt="OEE 9" onclick="openGallery('oee', 8)">
+                                            <img src="projectimg/OEE Welding/2026-02-02_12h31_00.webp" alt="OEE 10" onclick="openGallery('oee', 9)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('oee', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('oee', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="oee-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Camera Inspection Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-blue-600 text-sm font-semibold mb-2">AI & COMPUTER VISION</div>
+                            <h3 class="text-3xl font-bold mb-4">AI Camera Inspection QC Check</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Automated quality inspection system using computer vision and machine learning for defect detection.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">YOLO8</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">OpenCV</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="aicamera">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_07.webp" alt="AI Camera 1" onclick="openGallery('aicamera', 0)">
+                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_18.webp" alt="AI Camera 2" onclick="openGallery('aicamera', 1)">
+                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_36.webp" alt="AI Camera 3" onclick="openGallery('aicamera', 2)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('aicamera', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('aicamera', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="aicamera-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engineering Data Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-teal-600 text-sm font-semibold mb-2">DATA MANAGEMENT</div>
+                            <h3 class="text-3xl font-bold mb-4">Engineering Data Project Masspro</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Centralized engineering data management system for efficient data storage and retrieval.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">Tailwind CSS</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="engdata">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_41.webp" alt="Eng Data 1" onclick="openGallery('engdata', 0)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_47.webp" alt="Eng Data 2" onclick="openGallery('engdata', 1)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_50.webp" alt="Eng Data 3" onclick="openGallery('engdata', 2)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_55.webp" alt="Eng Data 4" onclick="openGallery('engdata', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_59.webp" alt="Eng Data 5" onclick="openGallery('engdata', 4)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_16.webp" alt="Eng Data 6" onclick="openGallery('engdata', 5)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_20.webp" alt="Eng Data 7" onclick="openGallery('engdata', 6)">
+                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_29.webp" alt="Eng Data 8" onclick="openGallery('engdata', 7)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('engdata', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('engdata', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="engdata-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IK Digital Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-pink-600 text-sm font-semibold mb-2">DIGITAL PLATFORM</div>
+                            <h3 class="text-3xl font-bold mb-4">IK Digital</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Digital transformation platform for internal knowledge management and documentation.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full">WP Framework</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">MySQL</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="ikdigital">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/Ik Digital/2026-02-02_12h26_34.webp" alt="IK Digital 1" onclick="openGallery('ikdigital', 0)">
+                                            <img src="projectimg/Ik Digital/2026-02-02_12h26_45.webp" alt="IK Digital 2" onclick="openGallery('ikdigital', 1)">
+                                            <img src="projectimg/Ik Digital/2026-02-02_12h32_16.webp" alt="IK Digital 3" onclick="openGallery('ikdigital', 2)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('ikdigital', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('ikdigital', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="ikdigital-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Security Projects Section -->
+    <section class="py-20 px-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 fade-in">IT Security Projects</h2>
+            <p class="text-gray-600 text-center mb-16 fade-in">Cybersecurity tools and threat detection systems</p>
+            
+            <div class="space-y-12">
+
+                <!-- IT Security - Wazuh, Shuffle, Iris, MISP -->
+                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-red-600 text-sm font-semibold mb-2">SECURITY & THREAT DETECTION</div>
+                            <h3 class="text-3xl font-bold mb-4">IT Security Infrastructure</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Comprehensive security infrastructure deployment including Wazuh SIEM, Shuffle SOAR, Iris Threat Intelligence, and MISP threat sharing platform.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Wazuh</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Shuffle</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Iris</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">MISP</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="itsecurity">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Security/2026-02-02_12h57_21.webp" alt="IT Security 1" onclick="openGallery('itsecurity', 0)">
+                                            <img src="projectimg/IT Security/2026-02-02_12h57_27.webp" alt="IT Security 2" onclick="openGallery('itsecurity', 1)">
+                                            <img src="projectimg/IT Security/2026-02-02_12h57_33.webp" alt="IT Security 3" onclick="openGallery('itsecurity', 2)">
+                                            <img src="projectimg/IT Security/2026-02-02_12h57_38.webp" alt="IT Security 4" onclick="openGallery('itsecurity', 3)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('itsecurity', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('itsecurity', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="itsecurity-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+            <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-gray-600 mb-12 text-lg">Interested in collaborating or have a question? Feel free to reach out!</p>
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://github.com/jamaludindipa" target="_blank" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="mailto:jamaludinsa@gmail.com" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jamaludin-dipa-1660ba107/" target="_blank" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2026 Jamaludin Dipa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+        <img id="modal-image" src="" alt="Project Screenshot" class="max-w-5xl max-h-[90vh] object-contain rounded-lg">
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-modal-content">
+            <button class="gallery-modal-close" onclick="closeGallery()">&times;</button>
+            <button class="gallery-modal-btn prev" onclick="moveGallery(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <img id="gallery-image" class="gallery-modal-image" src="" alt="">
+            <button class="gallery-modal-btn next" onclick="moveGallery(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div id="gallery-counter" class="gallery-modal-counter"></div>
+        </div>
+    </div>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Project slider functionality (showing 4 images per slide)
+        const projectSliders = {};
+
+        function initProjectSlider(projectId) {
+            const container = document.querySelector(`[data-project="${projectId}"]`);
+            if (!container) return;
+
+            const track = container.querySelector('.project-slider-track');
+            const slides = track.querySelectorAll('.project-slide');
+            const totalSlides = slides.length;
+            const dotsContainer = document.getElementById(`${projectId}-dots`);
+
+            projectSliders[projectId] = {
+                current: 0,
+                total: totalSlides
+            };
+
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToProjectSlide(projectId, i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function moveProjectSlider(projectId, direction) {
+            const slider = projectSliders[projectId];
+            if (!slider) return;
+
+            slider.current = (slider.current + direction + slider.total) % slider.total;
+            updateProjectSlider(projectId);
+        }
+
+        function goToProjectSlide(projectId, index) {
+            const slider = projectSliders[projectId];
+            if (!slider) return;
+
+            slider.current = index;
+            updateProjectSlider(projectId);
+        }
+
+        function updateProjectSlider(projectId) {
+            const slider = projectSliders[projectId];
+            const container = document.querySelector(`[data-project="${projectId}"]`);
+            if (!container || !slider) return;
+
+            const track = container.querySelector('.project-slider-track');
+            const dots = document.getElementById(`${projectId}-dots`).querySelectorAll('.slider-dot');
+
+            track.style.transform = `translateX(-${slider.current * 100}%)`;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slider.current);
+            });
+        }
+
+        // Gallery modal functionality (individual images)
+        const projectImages = {
+            ceklist: [
+                'projectimg/Ceklist/2026-02-02_12h19_13.webp',
+                'projectimg/Ceklist/2026-02-02_12h19_24.webp',
+                'projectimg/Ceklist/2026-02-02_12h19_32.webp',
+                'projectimg/Ceklist/2026-02-02_12h19_42.webp',
+                'projectimg/Ceklist/2026-02-02_12h19_58.webp',
+                'projectimg/Ceklist/2026-02-02_12h20_06.webp',
+                'projectimg/Ceklist/2026-02-02_12h20_18.webp',
+                'projectimg/Ceklist/2026-02-02_12h20_28.webp'
+            ],
+            ticket: [
+                'projectimg/IT Ticket/2026-02-02_12h20_47.webp',
+                'projectimg/IT Ticket/2026-02-02_12h20_50.webp',
+                'projectimg/IT Ticket/2026-02-02_12h20_56.webp',
+                'projectimg/IT Ticket/2026-02-02_12h21_12.webp',
+                'projectimg/IT Ticket/2026-02-02_12h21_32.webp',
+                'projectimg/IT Ticket/2026-02-02_12h21_48.webp'
+            ],
+            production: [
+                'projectimg/Production Stamping/2026-02-02_12h34_25.webp',
+                'projectimg/Production Stamping/2026-02-02_12h34_52.webp',
+                'projectimg/Production Stamping/2026-02-02_12h35_00.webp',
+                'projectimg/Production Stamping/2026-02-02_12h35_10.webp'
+            ],
+            oee: [
+                'projectimg/OEE Welding/2026-02-02_12h17_51.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_01.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_07.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_13.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_16.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_19.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_22.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_29.webp',
+                'projectimg/OEE Welding/2026-02-02_12h18_34.webp',
+                'projectimg/OEE Welding/2026-02-02_12h31_00.webp'
+            ],
+            aicamera: [
+                'projectimg/Ai Camera Inspection/2026-02-02_12h25_07.webp',
+                'projectimg/Ai Camera Inspection/2026-02-02_12h25_18.webp',
+                'projectimg/Ai Camera Inspection/2026-02-02_12h25_36.webp'
+            ],
+            engdata: [
+                'projectimg/Engineering Data/2026-02-02_12h27_41.webp',
+                'projectimg/Engineering Data/2026-02-02_12h27_47.webp',
+                'projectimg/Engineering Data/2026-02-02_12h27_50.webp',
+                'projectimg/Engineering Data/2026-02-02_12h27_55.webp',
+                'projectimg/Engineering Data/2026-02-02_12h27_59.webp',
+                'projectimg/Engineering Data/2026-02-02_12h28_16.webp',
+                'projectimg/Engineering Data/2026-02-02_12h28_20.webp',
+                'projectimg/Engineering Data/2026-02-02_12h28_29.webp'
+            ],
+            ikdigital: [
+                'projectimg/Ik Digital/2026-02-02_12h26_34.webp',
+                'projectimg/Ik Digital/2026-02-02_12h26_45.webp',
+                'projectimg/Ik Digital/2026-02-02_12h32_16.webp'
+            ],
+            itsecurity: [
+                'projectimg/IT Security/2026-02-02_12h57_21.webp',
+                'projectimg/IT Security/2026-02-02_12h57_27.webp',
+                'projectimg/IT Security/2026-02-02_12h57_33.webp',
+                'projectimg/IT Security/2026-02-02_12h57_38.webp'
+            ]
+        };
+
+        let currentGallery = {
+            project: null,
+            index: 0
+        };
+
+        function openGallery(projectId, imageIndex) {
+            currentGallery = {
+                project: projectId,
+                index: imageIndex
+            };
+            updateGalleryImage();
+            document.getElementById('gallery-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('gallery-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function moveGallery(direction) {
+            const images = projectImages[currentGallery.project];
+            if (!images) return;
+
+            currentGallery.index = (currentGallery.index + direction + images.length) % images.length;
+            updateGalleryImage();
+        }
+
+        function updateGalleryImage() {
+            const images = projectImages[currentGallery.project];
+            if (!images) return;
+
+            const imageSrc = images[currentGallery.index];
+            document.getElementById('gallery-image').src = imageSrc;
+            document.getElementById('gallery-counter').textContent = `${currentGallery.index + 1} / ${images.length}`;
+        }
+
+        // Initialize all project sliders
+        document.addEventListener('DOMContentLoaded', () => {
+            initProjectSlider('ceklist');
+            initProjectSlider('ticket');
+            initProjectSlider('production');
+            initProjectSlider('oee');
+            initProjectSlider('aicamera');
+            initProjectSlider('engdata');
+            initProjectSlider('ikdigital');
+            initProjectSlider('itsecurity');
+        });
+
+        // Modal functions (for backward compatibility)
+        function openModal(src) {
+            document.getElementById('modal-image').src = src;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeGallery();
+            }
+            // Arrow keys for gallery navigation
+            if (document.getElementById('gallery-modal').classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    moveGallery(-1);
+                } else if (e.key === 'ArrowRight') {
+                    moveGallery(1);
+                }
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
