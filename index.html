@@ -300,6 +300,49 @@
                     </div>
                 </div>
 
+                <!-- Automatic Preventive Dies Maintenance Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-8">
+                            <div class="text-orange-600 text-sm font-semibold mb-2">MAINTENANCE SYSTEM</div>
+                            <h3 class="text-3xl font-bold mb-4">Automatic Preventive Dies Maintenance</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Automated preventive maintenance scheduling and tracking system for dies with real-time monitoring and notifications.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">jQuery</span>
+                            </div>
+                            <a href="https://github.com/jamaludindipa" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                View Project <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="apdm">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/APDM/placeholder.webp" alt="APDM 1" onclick="openGallery('apdm', 0)">
+                                            <img src="projectimg/APDM/placeholder.webp" alt="APDM 2" onclick="openGallery('apdm', 1)">
+                                            <img src="projectimg/APDM/placeholder.webp" alt="APDM 3" onclick="openGallery('apdm', 2)">
+                                            <img src="projectimg/APDM/placeholder.webp" alt="APDM 4" onclick="openGallery('apdm', 3)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev" onclick="moveProjectSlider('apdm', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next" onclick="moveProjectSlider('apdm', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="apdm-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Ceklist Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
@@ -824,6 +867,12 @@
                 'projectimg/MOM/2026-05-21_14h34_41.png',
                 'projectimg/MOM/2026-05-21_14h34_47.png'
             ],
+            apdm: [
+                'projectimg/APDM/placeholder.webp',
+                'projectimg/APDM/placeholder.webp',
+                'projectimg/APDM/placeholder.webp',
+                'projectimg/APDM/placeholder.webp'
+            ],
             ceklist: [
                 'projectimg/Ceklist/2026-02-02_12h19_13.webp',
                 'projectimg/Ceklist/2026-02-02_12h19_24.webp',
@@ -928,6 +977,7 @@
         // Initialize all project sliders
         document.addEventListener('DOMContentLoaded', () => {
             initProjectSlider('mom');
+            initProjectSlider('apdm');
             initProjectSlider('ceklist');
             initProjectSlider('ticket');
             initProjectSlider('production');
