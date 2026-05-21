@@ -160,6 +160,11 @@
             object-fit: contain;
             border-radius: 0.5rem;
         }
+        .gallery-modal-video {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 0.5rem;
+        }
         .gallery-modal-btn {
             position: absolute;
             top: 50%;
@@ -720,6 +725,46 @@
                                             <img src="projectimg/IT Security/2026-02-02_12h57_38.webp" alt="IT Security 4" onclick="openGallery('itsecurity', 3)">
                                         </div>
                                     </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Security/2026-05-17_10h45_40.png" alt="IT Security 5" onclick="openGallery('itsecurity', 4)">
+                                            <img src="projectimg/IT Security/2026-05-17_10h45_56.png" alt="IT Security 6" onclick="openGallery('itsecurity', 5)">
+                                            <img src="projectimg/IT Security/2026-05-17_10h46_17.png" alt="IT Security 7" onclick="openGallery('itsecurity', 6)">
+                                            <img src="projectimg/IT Security/2026-05-17_16h36_25.png" alt="IT Security 8" onclick="openGallery('itsecurity', 7)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Security/2026-05-17_16h37_02.png" alt="IT Security 9" onclick="openGallery('itsecurity', 8)">
+                                            <img src="projectimg/IT Security/2026-05-17_16h51_52.png" alt="IT Security 10" onclick="openGallery('itsecurity', 9)">
+                                            <img src="projectimg/IT Security/2026-05-17_16h52_41.png" alt="IT Security 11" onclick="openGallery('itsecurity', 10)">
+                                            <img src="projectimg/IT Security/2026-05-17_17h24_33.png" alt="IT Security 12" onclick="openGallery('itsecurity', 11)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Security/2026-05-17_17h24_42.png" alt="IT Security 13" onclick="openGallery('itsecurity', 12)">
+                                            <img src="projectimg/IT Security/2026-05-17_17h41_15.png" alt="IT Security 14" onclick="openGallery('itsecurity', 13)">
+                                            <img src="projectimg/IT Security/2026-05-17_17h41_24.png" alt="IT Security 15" onclick="openGallery('itsecurity', 14)">
+                                            <img src="projectimg/IT Security/2026-05-17_17h44_00.png" alt="IT Security 16" onclick="openGallery('itsecurity', 15)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img src="projectimg/IT Security/2026-05-17_17h45_21.png" alt="IT Security 17" onclick="openGallery('itsecurity', 16)">
+                                            <img src="projectimg/IT Security/2026-05-17_17h51_51.png" alt="IT Security 18" onclick="openGallery('itsecurity', 17)">
+                                            <img src="projectimg/IT Security/photo_2026-05-17_17-51-04.jpg" alt="IT Security 19" onclick="openGallery('itsecurity', 18)">
+                                            <div class="relative bg-gray-800 rounded-lg overflow-hidden cursor-pointer" onclick="openGallery('itsecurity', 19)">
+                                                <video class="w-full h-28 object-cover" poster="projectimg/IT Security/2026-05-17_16h37_02.png">
+                                                    <source src="projectimg/IT Security/2026-05-17_16h55_07.mp4" type="video/mp4">
+                                                </video>
+                                                <div class="absolute inset-0 flex items-center justify-center bg-black/30">
+                                                    <i class="fas fa-play-circle text-white text-3xl"></i>
+                                                </div>
+                                                <div class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">VIDEO</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <button class="slider-btn prev" onclick="moveProjectSlider('itsecurity', -1)">
                                     <i class="fas fa-chevron-left"></i>
@@ -778,6 +823,7 @@
                 <i class="fas fa-chevron-left"></i>
             </button>
             <img id="gallery-image" class="gallery-modal-image" src="" alt="">
+            <video id="gallery-video" class="gallery-modal-video" controls style="display: none;"></video>
             <button class="gallery-modal-btn next" onclick="moveGallery(1)">
                 <i class="fas fa-chevron-right"></i>
             </button>
@@ -813,6 +859,7 @@
             const slides = track.querySelectorAll('.project-slide');
             const totalSlides = slides.length;
             const dotsContainer = document.getElementById(`${projectId}-dots`);
+            if (!dotsContainer) return;
 
             projectSliders[projectId] = {
                 current: 0,
@@ -933,7 +980,23 @@
                 'projectimg/IT Security/2026-02-02_12h57_21.webp',
                 'projectimg/IT Security/2026-02-02_12h57_27.webp',
                 'projectimg/IT Security/2026-02-02_12h57_33.webp',
-                'projectimg/IT Security/2026-02-02_12h57_38.webp'
+                'projectimg/IT Security/2026-02-02_12h57_38.webp',
+                'projectimg/IT Security/2026-05-17_10h45_40.png',
+                'projectimg/IT Security/2026-05-17_10h45_56.png',
+                'projectimg/IT Security/2026-05-17_10h46_17.png',
+                'projectimg/IT Security/2026-05-17_16h36_25.png',
+                'projectimg/IT Security/2026-05-17_16h37_02.png',
+                'projectimg/IT Security/2026-05-17_16h51_52.png',
+                'projectimg/IT Security/2026-05-17_16h52_41.png',
+                'projectimg/IT Security/2026-05-17_17h24_33.png',
+                'projectimg/IT Security/2026-05-17_17h24_42.png',
+                'projectimg/IT Security/2026-05-17_17h41_15.png',
+                'projectimg/IT Security/2026-05-17_17h41_24.png',
+                'projectimg/IT Security/2026-05-17_17h44_00.png',
+                'projectimg/IT Security/2026-05-17_17h45_21.png',
+                'projectimg/IT Security/2026-05-17_17h51_51.png',
+                'projectimg/IT Security/photo_2026-05-17_17-51-04.jpg',
+                'projectimg/IT Security/2026-05-17_16h55_07.mp4'
             ]
         };
 
@@ -953,6 +1016,12 @@
         }
 
         function closeGallery() {
+            const galleryVideo = document.getElementById('gallery-video');
+            if (galleryVideo) {
+                galleryVideo.pause();
+                galleryVideo.removeAttribute('src');
+                galleryVideo.load();
+            }
             document.getElementById('gallery-modal').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
@@ -969,8 +1038,30 @@
             const images = projectImages[currentGallery.project];
             if (!images) return;
 
-            const imageSrc = images[currentGallery.index];
-            document.getElementById('gallery-image').src = imageSrc;
+            const mediaSrc = images[currentGallery.index];
+            const isVideo = mediaSrc.toLowerCase().endsWith('.mp4') || mediaSrc.toLowerCase().endsWith('.webm') || mediaSrc.toLowerCase().endsWith('.mov');
+
+            const galleryImage = document.getElementById('gallery-image');
+            const galleryVideo = document.getElementById('gallery-video');
+
+            if (isVideo) {
+                galleryImage.style.display = 'none';
+                if (galleryVideo) {
+                    galleryVideo.style.display = 'block';
+                    galleryVideo.src = mediaSrc;
+                    galleryVideo.poster = 'projectimg/IT Security/2026-05-17_16h37_02.png';
+                }
+            } else {
+                galleryImage.style.display = 'block';
+                if (galleryVideo) {
+                    galleryVideo.pause();
+                    galleryVideo.style.display = 'none';
+                    galleryVideo.removeAttribute('src');
+                    galleryVideo.load();
+                }
+                galleryImage.src = mediaSrc;
+            }
+
             document.getElementById('gallery-counter').textContent = `${currentGallery.index + 1} / ${images.length}`;
         }
 
