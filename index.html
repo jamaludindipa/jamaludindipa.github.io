@@ -233,9 +233,14 @@
     <!-- Hero Section -->
     <section id="about" class="min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="max-w-4xl mx-auto text-center fade-in">
-<div class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-lg border-4 border-white">
-<img src="jamaludindipa.png" alt="Jamaludin Dipa" class="w-full h-full object-cover">
-            </div>
+            <button
+                type="button"
+                class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-lg border-4 border-white block cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200"
+                onclick="openModal('jamaludindipa.png')"
+                aria-label="Open larger profile photo of Jamaludin Dipa"
+            >
+                <img src="jamaludindipa.png" alt="Jamaludin Dipa" class="w-full h-full object-cover">
+            </button>
             <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Jamaludin Dipa
             </h1>
@@ -948,7 +953,7 @@
     <!-- Image Modal -->
     <div id="modal" class="modal" onclick="closeModal()">
         <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
-        <img id="modal-image" src="" alt="Project Screenshot" class="max-w-5xl max-h-[90vh] object-contain rounded-lg">
+        <img id="modal-image" src="" alt="Profile Photo" class="max-w-5xl max-h-[90vh] object-contain rounded-lg" onclick="event.stopPropagation()">
     </div>
 
     <!-- Gallery Modal -->
