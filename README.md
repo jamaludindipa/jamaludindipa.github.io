@@ -1,33 +1,54 @@
 # Jamaludin Dipa - Portfolio
 
-Portfolio website showcasing internal systems, manufacturing applications, and security infrastructure projects.
+Portfolio website showcasing manufacturing systems, internal business applications, AI and computer vision workflows, and security infrastructure projects.
 
 ## Live Preview
 
 View the portfolio at: `https://jamaludindipa.github.io/portfolio/`
 
-## Project Structure
+## Portfolio Focus
 
-```text
-jamalgithub/
-├── index.html
-├── projectimg/
-│   ├── MES Traceability/
-│   ├── MOM/
-│   ├── APDM/
-│   ├── Ceklist/
-│   ├── IT Ticket/
-│   ├── Production Stamping/
-│   ├── OEE Welding/
-│   ├── Ai Camera Inspection/
-│   ├── Engineering Data/
-│   ├── Ik Digital/
-│   └── IT Security/
-├── README.md
-└── package.json
-```
+This portfolio brings together the main project areas currently presented on the site:
 
-## Featured Project
+- Manufacturing systems: MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
+- Business applications: meeting management, checklist workflows, maintenance systems, and IT ticketing
+- AI and data workflows: AI camera inspection, agent orchestration, and engineering data management
+- Security infrastructure: Wazuh, Shuffle, Iris, and MISP based security environment
+
+## Project Highlights
+
+### Manufacturing & Operations
+
+- `META - Manufacturing Execution & Traceability Application`
+  Integrated MES flow covering work order execution, material readiness, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
+- `Aplikasi Stamping`
+  Production dashboard and manufacturing reporting flow for stamping operations.
+- `OEE Welding Single Product`
+  Real-time welding effectiveness monitoring with manufacturing analytics and PLC-oriented operational visibility.
+- `Automatic Preventive Dies Maintenance`
+  Preventive maintenance workflow for dies with scheduling, monitoring, and maintenance execution support.
+
+### Internal Business Applications
+
+- `Mom (Minute Of Meeting Online)`
+  Laravel and React based meeting management system for scheduling, documentation, and collaborative meeting minutes.
+- `Ceklist Management System`
+  Checklist, planner, and task control application for routine operational activities.
+- `IT Ticket Management`
+  Internal IT ticketing workflow with operational tracking and support handling.
+- `IK Digital`
+  Digital internal platform for documentation and knowledge distribution.
+
+### AI, Data, and Security
+
+- `AI Camera Inspection QC Check`
+  Computer vision driven inspection workflow for quality control scenarios.
+- `Engineering Data Project Masspro`
+  Centralized engineering data management workflow for operational access and organization.
+- `IT Security Infrastructure`
+  Security deployment portfolio covering SIEM, SOAR, threat intelligence, and security operations tooling.
+
+## Featured Manufacturing Project
 
 ### META - Manufacturing Execution & Traceability Application
 
@@ -45,12 +66,12 @@ META is a Manufacturing Execution System designed to connect work order executio
 
 #### Key Features
 
-- Modular Laravel Blade UI for MES, warehouse, quality, and traceability workflows.
-- Role-based menu visibility with a sidebar-driven dashboard structure.
-- Reusable movement flow covering request, picking, check OK, and movement print.
-- QR and part-tag oriented traceability flow.
-- End-to-end dummy data simulation for manufacturing process validation.
-- UI parity across modules using a shared topbar, sidebar, and main content pattern.
+- Modular Laravel Blade UI for MES, warehouse, quality, and traceability workflows
+- Role-based menu visibility with sidebar-driven navigation
+- Reusable movement flow covering request, picking, check OK, and movement print
+- QR and part-tag oriented traceability flow
+- End-to-end manufacturing simulation with consistent operational data
+- UI parity across modules using shared topbar, sidebar, and main content patterns
 
 #### Module Map
 
@@ -72,55 +93,44 @@ META is a Manufacturing Execution System designed to connect work order executio
 - Testing: Playwright
 - Deployment: GitLab, Linux Server, systemd
 
-#### Screenshots
-
-Recommended views shown in this repository:
-
-- Login page META
-- MES Dashboard
-- MES Dashboard Menu
-- Work Order Stamping
-- Bon Material / Material Request
-- Material Movement
-- Stamping Movement
-- WIP Supermarket Movement
-- Welding Assy Movement
-- Final Inspection FIFO
-- FG Delivery Stock
-- Traceability Upstream Downstream
-
 #### Current Status
 
 - Status: Internal MES MVP
-- Focus: Frontend flow, module architecture, UI consistency, manufacturing process simulation
+- Focus: Frontend flow, module architecture, UI consistency, and manufacturing process integration
 - Next phase: Backend transaction service, database normalization, scan validation service, and production-grade traceability event store
 
 #### Security & Privacy Notice
 
 Screenshots and data shown are sanitized or dummy data. Internal credentials, database configuration, company private endpoints, and production secrets are excluded.
 
-#### Portfolio Summary
-
-Built a modular MES and Traceability system for automotive metal manufacturing, covering work order execution, OEE integration, warehouse movement, WIP supermarket, quality inspection, finish good delivery, and upstream-downstream traceability using Laravel Blade, JavaScript, and Playwright validation.
-
-## Other Projects
-
-- MOM (Minute Of Meeting Online)
-- Automatic Preventive Dies Maintenance
-- Ceklist Management System
-- IT Ticket Management
-- Aplikasi Stamping
-- OEE Welding Single Product
-- AI Camera Inspection QC Check
-- Engineering Data Project Masspro
-- IK Digital
-- IT Security Infrastructure
-
 ## Technologies Used In This Portfolio
 
 - Frontend: HTML5, Tailwind CSS, JavaScript, Font Awesome
-- Portfolio runtime: Static site hosted on GitHub Pages
-- Tooling: Node.js, Puppeteer
+- Backend and application stack across showcased systems: Laravel, PHP, React, Python, Flask, MySQL
+- AI and inspection stack: OpenCV, YOLO, agent orchestration workflows
+- Security stack: Wazuh, Shuffle, Iris, MISP
+- Tooling: Node.js, Puppeteer, GitHub Pages
+
+## Repository Structure
+
+```text
+jamalgithub/
+├── index.html
+├── projectimg/
+│   ├── MES Traceability/
+│   ├── MOM/
+│   ├── APDM/
+│   ├── Ceklist/
+│   ├── IT Ticket/
+│   ├── Production Stamping/
+│   ├── OEE Welding/
+│   ├── Ai Camera Inspection/
+│   ├── Engineering Data/
+│   ├── Ik Digital/
+│   └── IT Security/
+├── README.md
+└── package.json
+```
 
 ## Contact
 
