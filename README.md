@@ -1,84 +1,129 @@
 # Jamaludin Dipa - Portfolio
 
-Welcome to my personal portfolio website showcasing my projects and work as a Full Stack Developer.
+Portfolio website showcasing internal systems, manufacturing applications, and security infrastructure projects.
 
-## 🚀 Live Preview
+## Live Preview
 
-You can view the live portfolio at: `https://jamaludindipa.github.io/portfolio/`
+View the portfolio at: `https://jamaludindipa.github.io/portfolio/`
 
-## 📁 Project Structure
+## Project Structure
 
-```
+```text
 jamalgithub/
-├── index.html              # Main portfolio page
-├── projectimg/             # Project screenshots
+├── index.html
+├── projectimg/
+│   ├── MES Traceability/
+│   ├── MOM/
+│   ├── APDM/
 │   ├── Ceklist/
 │   ├── IT Ticket/
 │   ├── Production Stamping/
 │   ├── OEE Welding/
 │   ├── Ai Camera Inspection/
 │   ├── Engineering Data/
-│   └── Ik Digital/
-├── README.md              # This file
-└── package.json           # Node dependencies (for screenshot automation)
+│   ├── Ik Digital/
+│   └── IT Security/
+├── README.md
+└── package.json
 ```
 
-## 🎨 Featured Projects
+## Featured Project
 
-### 1. Ceklist Management System
-Comprehensive checklist and task management application with PM planner functionality.
-- **Tech Stack**: PHP, MySQL, Bootstrap, jQuery
-- **Features**: Asset tracking, PM planner, analytics dashboard, electronic signatures
+### META - Manufacturing Execution & Traceability Application
 
-### 2. IT Ticket Management
-Advanced ticketing platform with face recognition capabilities.
-- **Tech Stack**: Python, Flask, OpenCV, Face Recognition
-- **Features**: Face recognition, push notifications, real-time tracking
+#### Overview
 
-### 3. Production Dashboard
-Real-time production monitoring and material management system.
-- **Tech Stack**: PHP, Chart.js, MySQL, Bootstrap
-- **Features**: Material tracking, machine monitoring, advanced reporting
+META is a prototype Manufacturing Execution System designed to connect work order execution, material readiness, stamping production, real-time OEE, WIP supermarket, welding assembly, final inspection, finish good flow, delivery, and upstream-downstream traceability in one operational manufacturing platform.
 
-## 🛠️ Technologies Used
+#### Business Problem
 
-- **Frontend**: HTML5, Tailwind CSS, JavaScript, Font Awesome
-- **Backend**: PHP, Python Flask
-- **Database**: MySQL
-- **Tools**: Git, Node.js, Puppeteer
+- Production work orders are difficult to trace from raw material to finish good.
+- Production, OEE, warehouse movement, and inspection data are often separated across different operational views.
+- Material, WIP, and FG movement require validated scan, picking, check, and movement print flows.
+- Part tag traceability must connect raw material, WIP, production, final inspection, finish good, and delivery events.
+- Operational UI needs to stay consistent across multiple manufacturing modules.
 
-## 📸 Screenshots
+#### Key Features
 
-The portfolio includes actual screenshots from running applications, organized in the `projectimg/` directory.
+- Modular Laravel Blade UI for MES, warehouse, quality, and traceability workflows.
+- Role-based menu visibility with a sidebar-driven dashboard structure.
+- Reusable movement flow covering request, picking, check OK, and movement print.
+- QR and part-tag oriented traceability flow.
+- End-to-end dummy data simulation for manufacturing process validation.
+- UI parity across modules using a shared topbar, sidebar, and main content pattern.
 
-## 🌐 Deployment
+#### Module Map
 
-This portfolio is designed to be deployed on GitHub Pages. To deploy:
+- Dashboard & Monitoring: MES Dashboard, MES Dashboard Menu, Machines Real-time, PLC Monitor, OEE Report, Pareto Loss, Six Big Loss
+- Work Order & Production: Work Order Stamping, Work Order Welding Assy, Job Order / Job Card, Stamping Manual Production, Stamping OEE Production, Welding Assy Manual Production
+- Warehouse & Movement: RM Warehouse, Material Movement, WIP Supermarket Warehouse, WIP Supermarket Movement, FG Warehouse & Delivery
+- Quality: Raw Material Inspection, Final Inspection, FI Lot Inspection, FI Movement, Hold / Disposition
+- Traceability: Traceability Upstream Downstream, Document Type & Sequence, Scan Event Flow, Stock Card / Movement History
 
-1. Push this repository to GitHub
-2. Enable GitHub Pages in repository settings
-3. Select `main` branch as source
-4. Your portfolio will be live at `https://yourusername.github.io/repository-name/`
+#### End-to-End Manufacturing Flow
 
-## 🔧 Customization
+`ERP / APS Work Order -> Material Inspection -> RM Stock Ready -> Bon Material / Material Request -> Material Picking & Check OK -> Receipt Material Production -> Job Card Execution -> Manual / OEE Production Output -> Stamping Movement -> WIP Supermarket / Final Inspection -> FI Lot Inspection -> FI Movement -> FG Warehouse -> Delivery -> Traceability Upstream Downstream`
 
-To customize this portfolio for your own use:
+#### Tech Stack
 
-1. Replace personal information in `index.html`
-2. Update project descriptions and images
-3. Add your own GitHub and social links
-4. Modify the color scheme and styling as needed
+- Backend: Laravel 11, PHP 8.3
+- Frontend: Blade, JavaScript, Tailwind CSS
+- Database: MySQL
+- Testing: Playwright
+- Deployment: GitLab, Linux Server, systemd
 
-## 📄 License
+#### Screenshots
 
-This project is open source and available for personal and commercial use.
+Recommended views shown in this repository:
 
-## 👤 Contact
+- Login page META
+- MES Dashboard
+- MES Dashboard Menu
+- Work Order Stamping
+- Bon Material / Material Request
+- Material Movement
+- Stamping Movement
+- WIP Supermarket Movement
+- Welding Assy Movement
+- Final Inspection FIFO
+- FG Delivery Stock
+- Traceability Upstream Downstream
 
-- **GitHub**: [@jamaludindipa](https://github.com/jamaludindipa)
-- **Email**: jamaludindipa@example.com
-- **LinkedIn**: [Jamaludin Dipa](https://linkedin.com/in/jamaludindipa)
+#### Current Status
 
----
+- Status: Prototype / Internal MES MVP
+- Focus: Frontend flow, module architecture, UI consistency, manufacturing process simulation
+- Next phase: Backend transaction service, database normalization, scan validation service, and production-grade traceability event store
 
-Made with ❤️ by Jamaludin Dipa
+#### Security & Privacy Notice
+
+Screenshots and data shown are sanitized or dummy data. Internal credentials, database configuration, company private endpoints, and production secrets are excluded.
+
+#### Portfolio Summary
+
+Built a modular MES and Traceability prototype for automotive metal manufacturing, covering work order execution, OEE integration, warehouse movement, WIP supermarket, quality inspection, finish good delivery, and upstream-downstream traceability using Laravel Blade, JavaScript, and Playwright validation.
+
+## Other Projects
+
+- MOM (Minute Of Meeting Online)
+- Automatic Preventive Dies Maintenance
+- Ceklist Management System
+- IT Ticket Management
+- Aplikasi Stamping
+- OEE Welding Single Product
+- AI Camera Inspection QC Check
+- Engineering Data Project Masspro
+- IK Digital
+- IT Security Infrastructure
+
+## Technologies Used In This Portfolio
+
+- Frontend: HTML5, Tailwind CSS, JavaScript, Font Awesome
+- Portfolio runtime: Static site hosted on GitHub Pages
+- Tooling: Node.js, Puppeteer
+
+## Contact
+
+- GitHub: [@jamaludindipa](https://github.com/jamaludindipa)
+- LinkedIn: [Jamaludin Dipa](https://www.linkedin.com/in/jamaludin-dipa-1660ba107/)
+- Email: `jamaludinsa@gmail.com`
