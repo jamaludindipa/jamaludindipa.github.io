@@ -11,6 +11,13 @@
         html {
             scroll-behavior: smooth;
         }
+        body {
+            overflow-x: hidden;
+        }
+        img,
+        video {
+            max-width: 100%;
+        }
         .project-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -213,15 +220,51 @@
             color: white;
             font-size: 1rem;
         }
+        @media (max-width: 640px) {
+            .project-card:hover {
+                transform: none;
+            }
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+            }
+            .project-slide .grid img {
+                height: 96px;
+            }
+            .gallery-modal-content {
+                width: calc(100vw - 1.5rem);
+            }
+            .gallery-modal-btn {
+                top: auto;
+                bottom: -56px;
+                transform: none;
+                width: 42px;
+                height: 42px;
+                font-size: 1.1rem;
+            }
+            .gallery-modal-btn.prev {
+                left: calc(50% - 56px);
+            }
+            .gallery-modal-btn.next {
+                right: calc(50% - 56px);
+            }
+            .gallery-modal-close {
+                top: -44px;
+            }
+            .gallery-modal-counter {
+                bottom: -82px;
+                font-size: 0.875rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
             <a href="#" class="text-2xl font-bold text-gray-800">JD</a>
-            <div class="flex gap-6">
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm sm:text-base sm:gap-6">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
                 <a href="#expertise" class="text-gray-600 hover:text-gray-900 transition-colors">Expertise</a>
                 <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">System Apps</a>
@@ -231,34 +274,34 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center px-6 pt-20">
+    <section id="about" class="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-28 sm:pt-20">
         <div class="max-w-4xl mx-auto text-center fade-in">
             <button
                 type="button"
-                class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-lg border-4 border-white block cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200"
+                class="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-8 rounded-full overflow-hidden shadow-lg border-4 border-white block cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-200"
                 onclick="openModal('jamaludindipa.png')"
                 aria-label="Open larger profile photo of Jamaludin Dipa"
             >
                 <img src="jamaludindipa.png" alt="Jamaludin Dipa" class="w-full h-full object-cover">
             </button>
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Jamaludin Dipa
             </h1>
-            <p class="text-xl md:text-2xl text-gray-600 mb-8">IT Infrastructure, AI Orchestration & Agent Development Engineer</p>
-            <p class="text-lg text-gray-500 max-w-3xl mx-auto mb-6 leading-relaxed">
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8">IT Infrastructure, AI Orchestration & Agent Development Engineer</p>
+            <p class="text-base sm:text-lg text-gray-500 max-w-3xl mx-auto mb-6 leading-relaxed">
                 I build production-oriented internal systems across manufacturing operations, enterprise workflows, AI-assisted applications, and security infrastructure. My work combines infrastructure ownership, application delivery, and operational tooling that teams can actually use day to day.
             </p>
             <p class="text-sm uppercase tracking-[0.2em] text-slate-400 max-w-3xl mx-auto mb-12">
                 Manufacturing Systems • Internal Enterprise Apps • AI Operations • Security Platforms
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="#expertise" class="px-8 py-3 border-2 border-blue-200 text-blue-700 rounded-lg font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all">
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                <a href="#expertise" class="px-6 sm:px-8 py-3 border-2 border-blue-200 text-blue-700 rounded-lg font-semibold hover:border-blue-300 hover:bg-blue-50 transition-all">
                     View Expertise
                 </a>
-                <a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all">
+                <a href="#projects" class="px-6 sm:px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all">
                     View Projects
                 </a>
-                <a href="https://github.com/jamaludindipa" target="_blank" class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 transition-all">
+                <a href="https://github.com/jamaludindipa" target="_blank" class="px-6 sm:px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 transition-all">
                     GitHub
                 </a>
             </div>
@@ -266,13 +309,13 @@
     </section>
 
     <!-- Expertise Section -->
-    <section id="expertise" class="py-20 px-6 bg-gray-50">
+    <section id="expertise" class="py-20 px-4 sm:px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 fade-in">Core Expertise</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Core Expertise</h2>
             <p class="text-gray-600 text-center mb-16 fade-in">Infrastructure, security, full stack engineering, and AI orchestration capabilities I use to build production-ready systems.</p>
 
             <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100 fade-in">
+                <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-gray-100 fade-in">
                     <div class="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 mb-3">Platform & Infra</div>
                     <h3 class="text-2xl font-bold mb-4">Server, Virtualization, Delivery</h3>
                     <div class="flex flex-wrap gap-2">
@@ -285,7 +328,7 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100 fade-in">
+                <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-gray-100 fade-in">
                     <div class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-600 mb-3">Application Stack</div>
                     <h3 class="text-2xl font-bold mb-4">Backend, Frontend, Data</h3>
                     <div class="flex flex-wrap gap-2">
@@ -301,7 +344,7 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-white p-8 shadow-sm border border-gray-100 fade-in">
+                <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-sm border border-gray-100 fade-in">
                     <div class="text-sm font-semibold uppercase tracking-[0.18em] text-violet-600 mb-3">State, Access, Security</div>
                     <h3 class="text-2xl font-bold mb-4">Control, Policy, Identity</h3>
                     <div class="flex flex-wrap gap-2">
@@ -316,9 +359,9 @@
                 </div>
             </div>
 
-            <div class="mt-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-8 text-white shadow-lg fade-in">
+            <div class="mt-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 p-6 sm:p-8 text-white shadow-lg fade-in">
                 <div class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300 mb-3">Primary Focus</div>
-                <h3 class="text-3xl font-bold mb-4">AI Orchestration & Agent Development</h3>
+                <h3 class="text-2xl sm:text-3xl font-bold mb-4">AI Orchestration & Agent Development</h3>
                 <p class="max-w-4xl text-slate-200 leading-relaxed">
                     My core direction is building AI-assisted operational systems: orchestrating agents, connecting them to enterprise apps, securing access through identity and policy, and deploying them on infrastructure that is maintainable, observable, and ready for real production workflows.
                 </p>
@@ -327,9 +370,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-white">
+    <section id="projects" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 fade-in">Flagship Systems & Applications</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Flagship Systems & Applications</h2>
             <p class="text-gray-600 text-center mb-16 fade-in">Selected internal platforms, manufacturing workflows, AI tooling, and operational systems.</p>
             
             <div class="space-y-16">
@@ -337,9 +380,9 @@
                 <!-- META Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
-                        <div class="md:w-1/2 p-8">
+                        <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-emerald-700 text-sm font-semibold mb-2">FLAGSHIP PROJECT • MANUFACTURING EXECUTION SYSTEM</div>
-                            <h3 class="text-3xl font-bold mb-3">META - Manufacturing Execution &amp; Traceability Application</h3>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">META - Manufacturing Execution &amp; Traceability Application</h3>
                             <p class="text-sm font-medium text-gray-500 mb-4">MES, OEE, Warehouse Movement, Quality Inspection, and End-to-End Manufacturing Traceability</p>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Built to solve fragmented shopfloor workflows by connecting ERP and APS work orders, material readiness, production execution, WIP movement, inspection, finish good flow, and upstream-downstream traceability in one manufacturing operating system.
@@ -409,9 +452,9 @@
                 <!-- Mom Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
-                        <div class="md:w-1/2 p-8">
+                        <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-red-600 text-sm font-semibold mb-2">FLAGSHIP PROJECT • FULL STACK LARAVEL REACT</div>
-                            <h3 class="text-3xl font-bold mb-4">Mom (Minute Of Meeting Online)</h3>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-4">Mom (Minute Of Meeting Online)</h3>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Built to replace fragmented meeting documentation with a single workflow for scheduling, capturing decisions, assigning follow-ups, and maintaining searchable meeting records for internal teams.
                             </p>
@@ -456,9 +499,9 @@
                 <!-- Automatic Preventive Dies Maintenance Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
-                        <div class="md:w-1/2 p-8">
+                        <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-orange-600 text-sm font-semibold mb-2">MAINTENANCE SYSTEM</div>
-                            <h3 class="text-3xl font-bold mb-4">Automatic Preventive Dies Maintenance</h3>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-4">Automatic Preventive Dies Maintenance</h3>
                             <p class="text-gray-600 mb-6 leading-relaxed">
                                 Built to reduce missed maintenance schedules by structuring preventive dies checks, work tracking, and maintenance follow-up in one internal workflow.
                             </p>
@@ -875,9 +918,9 @@
     </section>
 
     <!-- IT Security Projects Section -->
-    <section class="py-20 px-6 bg-gray-50">
+    <section class="py-20 px-4 sm:px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 fade-in">Security & Infrastructure Flagship</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Security & Infrastructure Flagship</h2>
             <p class="text-gray-600 text-center mb-16 fade-in">Security operations tooling, SIEM visibility, and threat-response oriented infrastructure.</p>
             
             <div class="space-y-12">
@@ -972,9 +1015,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-white">
+    <section id="contact" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center fade-in">
-            <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Let's Work Together</h2>
             <p class="text-gray-600 mb-12 text-lg">Interested in collaborating or have a question? Feel free to reach out!</p>
             
             <div class="flex justify-center gap-6 mb-12">
@@ -1055,7 +1098,7 @@
                 const data = await response.json();
                 counterEl.textContent = Number(data.count || 0).toLocaleString('en-US');
             } catch (error) {
-                counterEl.textContent = 'Unavailable';
+                counterEl.textContent = 'Counter pending';
             }
         }
 
