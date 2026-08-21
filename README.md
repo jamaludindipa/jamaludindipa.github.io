@@ -21,6 +21,20 @@ This portfolio brings together the main project areas currently presented on the
 - AI and data workflows: AI camera inspection, agent orchestration, and engineering data management
 - Security infrastructure: Wazuh, Shuffle, Iris, and MISP based security environment
 
+## Project Directory
+
+- `projects/meta.html` - META - Manufacturing Execution & Traceability Application
+- `projects/mom.html` - Mom (Minute Of Meeting Online)
+- `projects/apdm.html` - Automatic Preventive Dies Maintenance
+- `projects/ceklist.html` - Ceklist Management System
+- `projects/it-ticket.html` - IT Ticket Management
+- `projects/stamping.html` - Aplikasi Stamping
+- `projects/oee-welding.html` - OEE Welding Single Product
+- `projects/ai-camera-inspection.html` - AI Camera Inspection QC Check
+- `projects/engineering-data.html` - Engineering Data Project Masspro
+- `projects/ik-digital.html` - IK Digital
+- `projects/it-security.html` - IT Security Infrastructure
+
 ## Project Highlights
 
 Flagship projects are the clearest representation of my current direction and strongest production-oriented work. Supporting projects show breadth across internal platforms, operational tooling, and UI delivery.
@@ -124,6 +138,8 @@ META is a Manufacturing Execution System designed to connect work order executio
 #### Security & Privacy Notice
 
 Screenshots and data shown are sanitized or dummy data. Internal credentials, database configuration, company private endpoints, and production secrets are excluded.
+
+Additional applications in this portfolio also have dedicated detail pages so reviewers can inspect status, trust context, contribution, and stack per project without overloading the landing page.
 
 ## Technologies Used In This Portfolio
 
