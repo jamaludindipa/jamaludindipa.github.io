@@ -6,6 +6,12 @@ Portfolio website showcasing manufacturing systems, internal business applicatio
 
 View the portfolio at: `https://jamaludindipa.github.io/portfolio/`
 
+## Who This Portfolio Is For
+
+- Recruiters and HR teams who need a fast view of role fit, domain focus, and project credibility
+- Hiring managers who want to see which systems are flagship, production-oriented, or private internal work
+- Technical reviewers who want enough implementation context to understand stack, workflow depth, and operational relevance
+
 ## Portfolio Focus
 
 This portfolio brings together the main project areas currently presented on the site:
@@ -17,10 +23,12 @@ This portfolio brings together the main project areas currently presented on the
 
 ## Project Highlights
 
+Flagship projects are the clearest representation of my current direction and strongest production-oriented work. Supporting projects show breadth across internal platforms, operational tooling, and UI delivery.
+
 ### Manufacturing & Operations
 
 - `META - Manufacturing Execution & Traceability Application`
-  Integrated MES flow covering work order execution, material readiness, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
+  Flagship manufacturing platform connecting work order execution, material readiness, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
 - `Aplikasi Stamping`
   Production dashboard and manufacturing reporting flow for stamping operations.
 - `OEE Welding Single Product`
@@ -31,7 +39,7 @@ This portfolio brings together the main project areas currently presented on the
 ### Internal Business Applications
 
 - `Mom (Minute Of Meeting Online)`
-  Laravel and React based meeting management system for scheduling, documentation, and collaborative meeting minutes.
+  Flagship internal workflow platform for scheduling meetings, documenting outcomes, assigning follow-ups, and keeping searchable internal records.
 - `Ceklist Management System`
   Checklist, planner, and task control application for routine operational activities.
 - `IT Ticket Management`
@@ -46,7 +54,7 @@ This portfolio brings together the main project areas currently presented on the
 - `Engineering Data Project Masspro`
   Centralized engineering data management workflow for operational access and organization.
 - `IT Security Infrastructure`
-  Security deployment portfolio covering SIEM, SOAR, threat intelligence, and security operations tooling.
+  Flagship security stack covering SIEM, SOAR, threat intelligence, and internal security operations workflows.
 
 ## Featured Manufacturing Project
 
@@ -98,6 +106,20 @@ META is a Manufacturing Execution System designed to connect work order executio
 - Status: Internal MES MVP
 - Focus: Frontend flow, module architecture, UI consistency, and manufacturing process integration
 - Next phase: Backend transaction service, database normalization, scan validation service, and production-grade traceability event store
+
+## Secondary Flagship Projects
+
+### IT Security Infrastructure
+
+- Problem: Security monitoring, incident handling, and threat intelligence workflows often live in disconnected tools.
+- Contribution: Integrated Wazuh, Shuffle, Iris, and MISP into a more coherent internal security operations stack.
+- Outcome: Stronger visibility, better response workflow structure, and a clearer platform story for security-oriented infrastructure work.
+
+### Mom (Minute Of Meeting Online)
+
+- Problem: Meeting decisions, follow-ups, and records become fragmented when handled across chat, spreadsheets, and manual notes.
+- Contribution: Built a structured meeting workflow using Laravel, React, Inertia.js, and MySQL.
+- Outcome: Better internal documentation flow, easier follow-up tracking, and a more credible example of enterprise app delivery.
 
 #### Security & Privacy Notice
 
