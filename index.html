@@ -1200,6 +1200,11 @@
             index: 0
         };
 
+        const videoPosters = {
+            aicamera: 'projectimg/Ai Camera Inspection/2026-08-13_09h00_39.png',
+            itsecurity: 'projectimg/IT Security/2026-05-17_16h37_02.png'
+        };
+
         function openGallery(projectId, imageIndex) {
             currentGallery = {
                 project: projectId,
@@ -1244,7 +1249,7 @@
                 if (galleryVideo) {
                     galleryVideo.style.display = 'block';
                     galleryVideo.src = mediaSrc;
-                    galleryVideo.poster = 'projectimg/IT Security/2026-05-17_16h37_02.png';
+                    galleryVideo.poster = videoPosters[currentGallery.project] || '';
                 }
             } else {
                 galleryImage.style.display = 'block';
