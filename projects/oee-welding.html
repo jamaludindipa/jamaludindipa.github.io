@@ -23,6 +23,11 @@
                 <img src="../projectimg/OEE Welding/oee-welding-workflow-illustration.png" alt="Illustration of OEE welding monitoring evolving from manual downtime recap into connected real-time machine visibility" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
                 <p class="text-slate-600 leading-relaxed">This flow moves welding monitoring away from end-of-shift notes and reactive recap into live OEE visibility. Machine events, counter signals, and downtime categories are surfaced in one operational view so engineering and production teams can act on availability, performance, quality, and loss patterns while the line is still running.</p>
             </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">PLC, OPC UA, and Andon Flow</h2>
+                <img src="../projectimg/OEE Welding/oee-welding-plc-opcua-workflow-illustration.png" alt="Illustration of welding robot events flowing through PLC and OPC UA into MySQL, andon downtime buttons, and OEE dashboard visibility" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">The operational path starts at the welding robot cell, where cycle events, counters, alarms, and machine signals are collected by PLC control. Data acquisition then moves through the OPC UA layer into MySQL for time-series, weld cycle, and downtime storage. At the same time, downtime input can be triggered directly from the physical button panel at the cell using the categories <strong>man</strong>, <strong>material</strong>, <strong>machine</strong>, <strong>jig</strong>, and <strong>other</strong>, so OEE and andon dashboards can read one consistent production and loss dataset.</p>
+            </section>
             <div class="grid gap-8 md:grid-cols-2 mb-10">
                 <section>
                     <h2 class="text-2xl font-bold mb-3">Business Problem</h2>
@@ -36,9 +41,10 @@
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Operational Flow</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
-                    <li>PLC and controller signals capture machine cycle, run-stop condition, and related events.</li>
-                    <li>Output and event data are translated into availability, performance, and quality visibility.</li>
-                    <li>Downtime categories and loss summaries help production and engineering identify recurring causes.</li>
+                    <li>PLC and controller signals capture robot cycle, run-stop condition, weld count, alarms, and related events from the welding cell.</li>
+                    <li>OPC UA data acquisition maps those signals into MySQL so production, event, and downtime records can be stored in one operational layer.</li>
+                    <li>Downtime can be entered from the physical cell button panel with categories man, material, machine, jig, and other.</li>
+                    <li>Output and downtime data are translated into availability, performance, quality, and andon visibility on the dashboard.</li>
                     <li>Live dashboards and trend views support faster response before losses accumulate further.</li>
                 </ul>
             </section>
@@ -46,7 +52,9 @@
                 <h2 class="text-2xl font-bold mb-3">Key Capabilities</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
                     <li>Real-time OEE monitoring for welding production.</li>
+                    <li>PLC and OPC UA based data acquisition into MySQL.</li>
                     <li>Downtime and loss visibility by event category.</li>
+                    <li>Andon downtime capture from physical cell buttons.</li>
                     <li>Machine status boards and trend-oriented analytics.</li>
                     <li>Operator and engineering-friendly monitoring interface.</li>
                 </ul>
@@ -59,7 +67,8 @@
                 <h2 class="text-2xl font-bold mb-3">Current Status</h2>
                 <p class="text-slate-600 leading-relaxed">Status: Internal monitoring workflow with emphasis on real-time visibility, downtime detection, and machine-level analytics for welding operations.</p>
             </section>
-            <section class="grid gap-4 md:grid-cols-2 mb-10">
+            <section class="grid gap-4 md:grid-cols-3 mb-10">
+                <img src="../projectimg/OEE Welding/oee-welding-plc-opcua-workflow-illustration.png" alt="OEE welding PLC OPC UA workflow illustration" class="w-full rounded-2xl shadow">
                 <img src="../projectimg/OEE Welding/2026-08-21_16h45_55.png" alt="OEE welding screen 1" class="w-full rounded-2xl shadow">
                 <img src="../projectimg/OEE Welding/2026-02-02_12h31_00.webp" alt="OEE welding screen 2" class="w-full rounded-2xl shadow">
             </section>
