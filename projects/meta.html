@@ -16,30 +16,57 @@
             <div class="flex flex-wrap gap-2 mb-10">
                 <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm">Internal MVP</span>
                 <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Manufacturing Workflow</span>
+                <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm">Operational Digitalization</span>
+                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">Traceability Foundation</span>
                 <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Sanitized Screenshots</span>
             </div>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Digitalization Context</h2>
+                <img src="../projectimg/MES Traceability/meta-manual-to-digital-illustration.png" alt="Illustration of META transforming fragmented manual and prototype manufacturing transactions into a connected digital MES transaction chain" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">Based on the active MES context and root PRD, META sits in a transition stage where canonical MES and ERP transaction tables already exist, but a meaningful portion of operational UI still needs to move from local JavaScript handling into database-backed transaction flows. The product direction is operational digitalization: turning disconnected request, picking, production, inspection, movement, and traceability steps into one auditable MES transaction chain.</p>
+            </section>
             <div class="grid gap-8 md:grid-cols-2 mb-10">
                 <section>
                     <h2 class="text-2xl font-bold mb-3">Business Problem</h2>
-                    <p class="text-slate-600 leading-relaxed">Manufacturing execution, material movement, inspection, and traceability often live across disconnected operational steps. META was built to connect those flows in one application pattern from material readiness to finish good delivery.</p>
+                    <p class="text-slate-600 leading-relaxed">Manufacturing execution, material movement, inspection, and traceability often live across disconnected operational steps. The documented META direction is to connect work order release, job card execution, movement, quality, warehouse, and genealogy into one system so that RM, WIP, FI, FG, and delivery references no longer depend on fragmented manual tracking.</p>
                 </section>
                 <section>
                     <h2 class="text-2xl font-bold mb-3">My Contribution</h2>
-                    <p class="text-slate-600 leading-relaxed">Designed the modular UI structure, warehouse movement pattern, work-order execution flow, and traceability-oriented navigation for a more coherent manufacturing operations experience.</p>
+                    <p class="text-slate-600 leading-relaxed">Designed the modular UI structure, transaction-oriented warehouse movement pattern, work-order and Job Card execution flow, and traceability-oriented navigation so the MES shell could represent one coherent operational path instead of separate manufacturing screens.</p>
                 </section>
             </div>
             <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Workflow Illustration</h2>
+                <img src="../projectimg/MES Traceability/meta-e2e-workflow-illustration.png" alt="Illustration of the documented META end-to-end manufacturing workflow from master data and ERP sync to work order, execution, movement, quality, FG delivery, and traceability" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">The illustrated flow follows the documented end-to-end chain: master data and ERP sync prepare references, PPIC releases Work Order Stamping, leaders open Job Card, execution continues through manual or OEE mode, valid output enters the movement queue, then the material travels through WIP Supermarket or Final Inspection, FI Movement, Warehouse FG &amp; Delivery, and finally into dashboard and traceability visibility.</p>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Documented Operational Flow</h2>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li>Master data and ERP sync prepare product, BOM, routing, machine, shift, employee, and partner references.</li>
+                    <li>PPIC creates or receives Work Order Stamping, then leaders manage sequence and open Job Card.</li>
+                    <li>Job Card becomes the official start point for manual execution or OEE/PLC execution.</li>
+                    <li>Valid stamping output enters an output queue before Stamping Movement sends it to WIP Supermarket or Final Inspection.</li>
+                    <li>Final Inspection, FI Movement, and Warehouse FG &amp; Delivery continue the chain toward finish good and shipment readiness.</li>
+                    <li>Traceability and MES Dashboard are expected to read auditable transaction and event references across the full flow.</li>
+                </ul>
+            </section>
+            <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Key Capabilities</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
-                    <li>Work order visibility across production, WIP, and final inspection.</li>
-                    <li>Reusable movement flow for request, picking, validation, and transfer.</li>
-                    <li>Traceability path from raw material through delivery.</li>
-                    <li>Role-based Laravel Blade UI for manufacturing modules.</li>
+                    <li>Work order and Job Card visibility across execution, WIP, and final inspection stages.</li>
+                    <li>Reusable movement flow for request, picking, check OK, print movement, and destination transfer.</li>
+                    <li>Traceability path from raw material, movement, and production output through FI, FG, and delivery.</li>
+                    <li>Role-based Laravel Blade shell for MES, warehouse, quality, ERP sync, and traceability modules.</li>
                 </ul>
             </section>
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Tech Stack</h2>
                 <p class="text-slate-600">Laravel 11, PHP 8.3, Blade, JavaScript, Tailwind CSS, MySQL, Playwright, GitLab, Linux Server, systemd.</p>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Current Status</h2>
+                <p class="text-slate-600 leading-relaxed">Status: Internal MES MVP with staged digitalization. As documented in the active context and PRD as of August 20, 2026, canonical MES transaction tables already exist in MySQL, while the next hardening phase is moving current UI transaction flows into DB-backed endpoints, stock ledger writes, genealogy references, and trace events without breaking the existing pilot workflow.</p>
             </section>
             <section class="grid gap-4 md:grid-cols-3 mb-10">
                 <img src="../projectimg/MES Traceability/2026-07-21_15h19_29.png" alt="META screen 1" class="w-full rounded-2xl shadow">
