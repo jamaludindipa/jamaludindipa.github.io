@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Preventive Jig Welding Assy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+        <a href="../index.html#projects" class="inline-flex items-center text-blue-600 font-semibold mb-8">← Back to Portfolio</a>
+        <div class="rounded-3xl bg-white shadow-lg border border-slate-200 p-5 sm:p-8 md:p-12">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700 mb-3">OEE Welding Extension • Preventive Automation</p>
+            <h1 class="text-3xl sm:text-4xl font-bold mb-4">Automatic Preventive Jig Welding Assy</h1>
+            <p class="text-base sm:text-lg text-slate-600 mb-8">Jig welding PM and repair workflow that converts manual production recap into automatic preventive trigger, schedule control, engineering execution, and compliance reporting.</p>
+            <div class="flex flex-wrap gap-2 mb-10">
+                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm">Internal MVP</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">OEE Welding Extension</span>
+                <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm">Preventive Automation</span>
+                <span class="px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-sm">Hybrid Legacy + Laravel</span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Sanitized Screenshots</span>
+            </div>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Digitalization Context</h2>
+                <img src="../projectimg/APJM/apjm-manual-to-auto-illustration.png" alt="Illustration of APJM replacing manual engineering recap of welding output with automatic preventive trigger by jig PCS accumulation" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">APJM is being developed as an ongoing internal MVP for robot welding maintenance. The main shift is operational: engineering no longer needs to collect production recap sheets and manually total PCS before deciding PM timing. The system reads actual robot welding output, accumulates PCS by jig, evaluates threshold and calendar due date, then drives preventive action through one connected workflow.</p>
+            </section>
+            <div class="grid gap-8 md:grid-cols-2 mb-10">
+                <section>
+                    <h2 class="text-2xl font-bold mb-3">Business Problem</h2>
+                    <p class="text-slate-600 leading-relaxed">Preventive jig welding timing was vulnerable to delay because engineering first had to gather production recap data, estimate total output manually, then decide whether a jig was due. That made over-target PCS, planning readiness, checklist execution, and evidence handling harder to monitor in one operational view.</p>
+                </section>
+                <section>
+                    <h2 class="text-2xl font-bold mb-3">My Contribution</h2>
+                    <p class="text-slate-600 leading-relaxed">Designed the preventive jig welding operational flow as an OEE Welding extension: output-based PCS tracking, automatic schedule trigger, kanban status control, memo action planning, PM checklist execution, evidence upload, and compliance-oriented reporting for engineering users.</p>
+                </section>
+            </div>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Workflow Illustration</h2>
+                <img src="../projectimg/APJM/apjm-e2e-workflow-illustration.png" alt="Illustration of APJM end-to-end flow from actual robot welding output to PCS accumulation, automatic PM schedule, memo action, checklist, evidence, and compliance reporting" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">The active workflow starts from actual robot welding output, then accumulates PCS by jig, evaluates output threshold or calendar due date, creates PM schedule automatically, moves the jig through kanban lifecycle, supports engineering memo action planning, continues through checklist-based execution and evidence capture, and closes with history plus compliance visibility.</p>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Documented Operational Flow</h2>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li>Actual welding output is sourced from production summary data and accumulated per jig since the last PM cycle.</li>
+                    <li>Preventive trigger is evaluated from output threshold and calendar interval, not from manual recap only.</li>
+                    <li>Auto schedule creation feeds kanban status such as pending, picked up, in progress, done, and attention states.</li>
+                    <li>Engineering planning continues through Memo Action, pickup PIC, PM checklist, and execution tracking.</li>
+                    <li>Evidence upload, history, analytics, and plan-vs-actual reporting complete the preventive lifecycle.</li>
+                    <li>Module permissions and scheduler jobs are aligned for engineering-focused maintenance operations.</li>
+                </ul>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Key Capabilities</h2>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li>Dashboard visibility for normal, warning, over-target, open schedule, and compliance status by jig.</li>
+                    <li>PCS monitor and jig cards that surface live progress against PM interval targets.</li>
+                    <li>Automatic PM schedule generation with kanban lifecycle control for engineering follow-up.</li>
+                    <li>Memo Action planning, PM checklist execution, repair events, and upload evidence in one flow.</li>
+                    <li>Plan vs actual, analytics, PCS harian and threshold, audit reports, and PM history visibility.</li>
+                    <li>Hybrid legacy PHP UI hardened with Laravel-oriented scheduler, permissions, and migration support.</li>
+                </ul>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Tech Stack</h2>
+                <p class="text-slate-600">Backend: PHP, Laravel ecosystem bridge, cron and scheduler. Frontend: legacy PHP views, JavaScript, Tailwind CSS. Database: MySQL. Domain: OEE Welding, Jig Preventive Maintenance, Engineering Workflow.</p>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Current Status</h2>
+                <p class="text-slate-600 leading-relaxed">Status: Internal MVP in active progress. The current implementation already centers preventive scheduling on actual robot welding output and calendar interval, while engineering workflow continues to be hardened across monitoring, planning, checklist execution, evidence control, and reporting.</p>
+            </section>
+            <section class="grid gap-4 md:grid-cols-3 mb-10">
+                <img src="../projectimg/APJM/2026-08-22_07h20_37.png" alt="APJM dashboard screen" class="w-full rounded-2xl shadow">
+                <img src="../projectimg/APJM/2026-08-22_07h20_49.png" alt="APJM kanban board screen" class="w-full rounded-2xl shadow">
+                <img src="../projectimg/APJM/2026-08-22_07h20_53.png" alt="APJM schedule screen" class="w-full rounded-2xl shadow">
+                <img src="../projectimg/APJM/2026-08-22_07h21_14.png" alt="APJM memo action screen" class="w-full rounded-2xl shadow">
+                <img src="../projectimg/APJM/2026-08-22_07h21_30.png" alt="APJM upload evidence screen" class="w-full rounded-2xl shadow">
+                <img src="../projectimg/APJM/2026-08-22_07h21_44.png" alt="APJM jig card screen" class="w-full rounded-2xl shadow">
+            </section>
+            <p class="text-sm text-slate-500">Privacy note: screenshots and data shown are sanitized or dummy data. Internal credentials, private endpoints, and production secrets are excluded.</p>
+        </div>
+    </main>
+    <script data-goatcounter="https://dipa.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
