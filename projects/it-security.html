@@ -10,13 +10,19 @@
     <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
         <a href="../index.html#projects" class="inline-flex items-center text-blue-600 font-semibold mb-8">← Back to Portfolio</a>
         <div class="rounded-3xl bg-white shadow-lg border border-slate-200 p-5 sm:p-8 md:p-12">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-red-700 mb-3">Flagship Project • Security & Threat Detection</p>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-red-700 mb-3">Flagship Project • Security &amp; Threat Detection</p>
             <h1 class="text-3xl sm:text-4xl font-bold mb-4">IT Security Infrastructure</h1>
             <p class="text-base sm:text-lg text-slate-600 mb-8">Integrated security operations stack for monitoring, case handling, automation, and threat-intelligence sharing.</p>
             <div class="flex flex-wrap gap-2 mb-10">
                 <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Production-Oriented</span>
                 <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">Security Operations</span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Integrated SOC Flow</span>
             </div>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Workflow Illustration</h2>
+                <img src="../projectimg/IT Security/it-security-workflow-illustration.png" alt="Illustration of disconnected security tools evolving into an integrated SOC workflow across Wazuh, Shuffle, Iris, and MISP" class="w-full rounded-3xl shadow-lg border border-slate-200 mb-5">
+                <p class="text-slate-600 leading-relaxed">This stack connects security operations that would otherwise stay siloed across separate consoles. Alert ingestion, workflow automation, case handling, and threat-intelligence context become easier to follow when the response chain is structured from detection through resolution.</p>
+            </section>
             <div class="grid gap-8 md:grid-cols-2 mb-10">
                 <section>
                     <h2 class="text-2xl font-bold mb-3">Business Problem</h2>
@@ -28,6 +34,15 @@
                 </section>
             </div>
             <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Operational Flow</h2>
+                <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                    <li>Security telemetry and alerts are ingested into a more unified monitoring context.</li>
+                    <li>Automation workflows help enrich and route alert handling faster.</li>
+                    <li>Case handling supports investigation and response tracking in a more structured process.</li>
+                    <li>Threat-intelligence context strengthens incident review and prioritization.</li>
+                </ul>
+            </section>
+            <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Key Capabilities</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
                     <li>SIEM-oriented visibility with Wazuh.</li>
@@ -35,6 +50,10 @@
                     <li>Case handling support with Iris.</li>
                     <li>Threat-intelligence sharing context with MISP.</li>
                 </ul>
+            </section>
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-3">Current Status</h2>
+                <p class="text-slate-600 leading-relaxed">Status: Integrated internal security workflow focused on connecting monitoring, automation, case handling, and intelligence context into one clearer SOC operating model.</p>
             </section>
             <section class="grid gap-4 md:grid-cols-3 mb-10">
                 <img src="../projectimg/IT Security/2026-05-17_10h45_40.png" alt="IT Security screen 1" class="w-full rounded-2xl shadow">
