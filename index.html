@@ -25,7 +25,9 @@
     <meta name="twitter:description" content="Portfolio featuring AI orchestration, IT infrastructure, manufacturing systems, OEE, MES, and internal operational platforms.">
     <meta name="twitter:image" content="https://jamaludindipa.github.io/og-thumbnail.jpg">
     <meta name="twitter:image:alt" content="Jamaludin Dipa portfolio preview featuring profile photo and IT infrastructure plus AI orchestrator development branding">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <title>Jamaludin Dipa - IT Infrastructure &amp; AI Orchestrator Development</title>
+    <link rel="canonical" href="https://jamaludindipa.github.io/">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -33,7 +35,31 @@
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jamaludin Dipa",
+        "url": "https://jamaludindipa.github.io/",
+        "image": "https://jamaludindipa.github.io/jamaludindipa.png",
+        "jobTitle": "IT Infrastructure, AI Orchestration & Agent Development Engineer",
+        "sameAs": [
+            "https://github.com/jamaludindipa",
+            "https://www.linkedin.com/in/jamaludin-dipa-1660ba107/"
+        ],
+        "knowsAbout": [
+            "Manufacturing Execution Systems",
+            "IT Infrastructure",
+            "AI Orchestration",
+            "Full Stack Development",
+            "Operational Technology",
+            "Cybersecurity"
+        ]
+    }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html {
@@ -290,7 +316,7 @@
     
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-between sm:items-center">
+        <div class="max-w-6xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3">
             <a href="#" class="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm transition-transform hover:scale-105" aria-label="Jamaludin Dipa home">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M4 7.5H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -302,10 +328,10 @@
                     <path d="M12 16H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
             </a>
-            <div class="flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm font-medium sm:w-auto sm:text-base sm:gap-6">
+            <div class="flex flex-nowrap items-center justify-end gap-2 text-xs font-medium sm:text-base sm:gap-6">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About</a>
                 <a href="#expertise" class="text-gray-600 hover:text-gray-900 transition-colors">Expertise</a>
-                <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">System Apps</a>
+                <a href="#projects" class="text-gray-600 hover:text-gray-900 transition-colors">Case Studies</a>
                 <a href="#contact" class="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
             </div>
         </div>
@@ -320,7 +346,7 @@
                 onclick="openModal('jamaludindipa.png')"
                 aria-label="Open larger profile photo of Jamaludin Dipa"
             >
-                <img src="jamaludindipa.png" alt="Jamaludin Dipa" class="w-full h-full object-cover">
+                <img src="jamaludindipa-profile.webp" width="320" height="321" fetchpriority="high" alt="Jamaludin Dipa" class="w-full h-full object-cover">
             </button>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Jamaludin Dipa
@@ -339,9 +365,34 @@
                 <a href="#projects" class="px-6 sm:px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all">
                     View Projects
                 </a>
-                <a href="https://github.com/jamaludindipa" target="_blank" class="px-6 sm:px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 transition-all">
+                <a href="https://github.com/jamaludindipa" target="_blank" rel="noopener noreferrer" class="px-6 sm:px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 transition-all">
                     GitHub
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Snapshot -->
+    <section aria-labelledby="ownership-heading" class="px-4 sm:px-6 pb-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl">
+            <div class="grid lg:grid-cols-[1.15fr_1fr]">
+                <div class="p-7 sm:p-10 lg:p-12 border-b border-slate-800 lg:border-b-0 lg:border-r">
+                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-300 mb-4">Independent End-to-End Ownership</p>
+                    <h2 id="ownership-heading" class="text-2xl sm:text-3xl font-bold mb-5">I build each showcased system independently, from operational problem to deployment.</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Every project in this portfolio is my own end-to-end work. I analyze the business process, define the solution and architecture, build the application and data flow, validate the workflow, deploy it, and continue improving it from operational feedback.
+                    </p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-1">
+                    <div class="p-7 sm:p-8 border-b border-slate-800 sm:border-b-0 sm:border-r lg:border-r-0 lg:border-b">
+                        <p class="text-sm font-semibold text-emerald-300 mb-2">Product &amp; Engineering</p>
+                        <p class="text-sm text-slate-300 leading-relaxed">Requirement discovery, workflow mapping, UI/UX, backend, database, integration, testing, and release.</p>
+                    </div>
+                    <div class="p-7 sm:p-8">
+                        <p class="text-sm font-semibold text-amber-300 mb-2">Infrastructure &amp; Operations</p>
+                        <p class="text-sm text-slate-300 leading-relaxed">Linux delivery, service operation, access control, observability, troubleshooting, and iterative support.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -410,66 +461,10 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Flagship Systems & Applications</h2>
-            <p class="text-gray-600 text-center mb-16 fade-in">Selected internal platforms, manufacturing workflows, AI tooling, and operational systems.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Selected Systems &amp; Case Studies</h2>
+            <p class="text-gray-600 text-center mb-16 fade-in">Independently designed, built, tested, deployed, and improved across manufacturing, enterprise operations, AI, and infrastructure.</p>
             
             <div class="space-y-16">
-
-                <!-- HRMS-HRIS Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
-                    <div class="md:flex">
-                        <div class="md:w-1/2 p-6 sm:p-8">
-                            <div class="text-indigo-700 text-sm font-semibold mb-2">INTERNAL MVP • HR WORKFLOW PLATFORM</div>
-                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">HRMS-HRIS</h3>
-                            <p class="text-sm font-medium text-gray-500 mb-4">Desktop-to-Web Migration, Handkey to Fingerprint Attendance, and HR Workflow Management</p>
-                            <p class="text-gray-600 mb-6 leading-relaxed">
-                                Built as an internal MVP to migrate HR operations from earlier desktop-based administration and handkey attendance processes into a web workflow with fingerprint-oriented attendance, employee records, leave handling, payroll support, and approval tracking in one system.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full">Internal MVP</span>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">HR Workflow</span>
-                                <span class="px-3 py-1 bg-amber-100 text-amber-700 text-sm rounded-full">Desktop Migration</span>
-                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Fingerprint Attendance</span>
-                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Laravel</span>
-                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">PHP</span>
-                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Vue</span>
-                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">MySQL</span>
-                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
-                            </div>
-                            <a href="projects/hrms-hris.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
-                                Project Details <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                        <div class="md:w-1/2 p-4">
-                            <div class="project-slider-container" data-project="hrmshris">
-                                <div class="project-slider-track">
-                                    <div class="project-slide">
-                                        <div class="grid">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h15_13.webp" alt="HRMS-HRIS 1" onclick="openGallery('hrmshris', 0)">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h15_17.webp" alt="HRMS-HRIS 2" onclick="openGallery('hrmshris', 1)">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h15_25.webp" alt="HRMS-HRIS 3" onclick="openGallery('hrmshris', 2)">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h15_42.webp" alt="HRMS-HRIS 4" onclick="openGallery('hrmshris', 3)">
-                                        </div>
-                                    </div>
-                                    <div class="project-slide">
-                                        <div class="grid">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h15_52.webp" alt="HRMS-HRIS 5" onclick="openGallery('hrmshris', 4)">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h16_37.webp" alt="HRMS-HRIS 6" onclick="openGallery('hrmshris', 5)">
-                                            <img src="projectimg/HRMS-HRIS/2026-08-22_06h17_48.webp" alt="HRMS-HRIS 7" onclick="openGallery('hrmshris', 6)">
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('hrmshris', -1)">
-                                    <i class="fas fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('hrmshris', 1)">
-                                    <i class="fas fa-chevron-right"></i>
-                                </button>
-                            </div>
-                            <div class="slider-dots" id="hrmshris-dots"></div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- META Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
@@ -501,40 +496,40 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h19_29.png" alt="META 1" onclick="openGallery('meta', 0)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h20_58.png" alt="META 2" onclick="openGallery('meta', 1)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h21_26.png" alt="META 3" onclick="openGallery('meta', 2)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h21_53.png" alt="META 4" onclick="openGallery('meta', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h19_29.png" alt="META 1" onclick="openGallery('meta', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h20_58.png" alt="META 2" onclick="openGallery('meta', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h21_26.png" alt="META 3" onclick="openGallery('meta', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h21_53.png" alt="META 4" onclick="openGallery('meta', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h22_12.png" alt="META 5" onclick="openGallery('meta', 4)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h22_24.png" alt="META 6" onclick="openGallery('meta', 5)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h22_30.png" alt="META 7" onclick="openGallery('meta', 6)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h23_02.png" alt="META 8" onclick="openGallery('meta', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h22_12.png" alt="META 5" onclick="openGallery('meta', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h22_24.png" alt="META 6" onclick="openGallery('meta', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h22_30.png" alt="META 7" onclick="openGallery('meta', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h23_02.png" alt="META 8" onclick="openGallery('meta', 7)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h24_04.png" alt="META 9" onclick="openGallery('meta', 8)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h24_31.png" alt="META 10" onclick="openGallery('meta', 9)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h24_41.png" alt="META 11" onclick="openGallery('meta', 10)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h24_56.png" alt="META 12" onclick="openGallery('meta', 11)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h24_04.png" alt="META 9" onclick="openGallery('meta', 8)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h24_31.png" alt="META 10" onclick="openGallery('meta', 9)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h24_41.png" alt="META 11" onclick="openGallery('meta', 10)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h24_56.png" alt="META 12" onclick="openGallery('meta', 11)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h25_09.png" alt="META 13" onclick="openGallery('meta', 12)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h25_46.png" alt="META 14" onclick="openGallery('meta', 13)">
-                                            <img src="projectimg/MES Traceability/2026-07-21_15h58_26.png" alt="META 15" onclick="openGallery('meta', 14)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h25_09.png" alt="META 13" onclick="openGallery('meta', 12)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h25_46.png" alt="META 14" onclick="openGallery('meta', 13)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MES Traceability/2026-07-21_15h58_26.png" alt="META 15" onclick="openGallery('meta', 14)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('meta', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('meta', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('meta', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('meta', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -570,31 +565,31 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/APJM/2026-08-22_07h20_37.webp" alt="APJM 1" onclick="openGallery('apjm', 0)">
-                                            <img src="projectimg/APJM/2026-08-22_07h20_41.webp" alt="APJM 2" onclick="openGallery('apjm', 1)">
-                                            <img src="projectimg/APJM/2026-08-22_07h20_49.webp" alt="APJM 3" onclick="openGallery('apjm', 2)">
-                                            <img src="projectimg/APJM/2026-08-22_07h20_53.webp" alt="APJM 4" onclick="openGallery('apjm', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h20_37.webp" alt="APJM 1" onclick="openGallery('apjm', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h20_41.webp" alt="APJM 2" onclick="openGallery('apjm', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h20_49.webp" alt="APJM 3" onclick="openGallery('apjm', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h20_53.webp" alt="APJM 4" onclick="openGallery('apjm', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_02.webp" alt="APJM 5" onclick="openGallery('apjm', 4)">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_14.webp" alt="APJM 6" onclick="openGallery('apjm', 5)">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_19.webp" alt="APJM 7" onclick="openGallery('apjm', 6)">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_30.webp" alt="APJM 8" onclick="openGallery('apjm', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_02.webp" alt="APJM 5" onclick="openGallery('apjm', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_14.webp" alt="APJM 6" onclick="openGallery('apjm', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_19.webp" alt="APJM 7" onclick="openGallery('apjm', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_30.webp" alt="APJM 8" onclick="openGallery('apjm', 7)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_44.webp" alt="APJM 9" onclick="openGallery('apjm', 8)">
-                                            <img src="projectimg/APJM/2026-08-22_07h21_49.webp" alt="APJM 10" onclick="openGallery('apjm', 9)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_44.webp" alt="APJM 9" onclick="openGallery('apjm', 8)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APJM/2026-08-22_07h21_49.webp" alt="APJM 10" onclick="openGallery('apjm', 9)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('apjm', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('apjm', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('apjm', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('apjm', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -603,6 +598,62 @@
                     </div>
                 </div>
                 
+                <!-- HRMS-HRIS Project -->
+                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-6 sm:p-8">
+                            <div class="text-indigo-700 text-sm font-semibold mb-2">INTERNAL MVP • HR WORKFLOW PLATFORM</div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">HRMS-HRIS</h3>
+                            <p class="text-sm font-medium text-gray-500 mb-4">Desktop-to-Web Migration, Handkey to Fingerprint Attendance, and HR Workflow Management</p>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Built as an internal MVP to migrate HR operations from earlier desktop-based administration and handkey attendance processes into a web workflow with fingerprint-oriented attendance, employee records, leave handling, payroll support, and approval tracking in one system.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm rounded-full">Internal MVP</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">HR Workflow</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-700 text-sm rounded-full">Desktop Migration</span>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Fingerprint Attendance</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Laravel</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">PHP</span>
+                                <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-sm rounded-full">Vue</span>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">MySQL</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
+                            </div>
+                            <a href="projects/hrms-hris.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                Project Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="hrmshris">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h15_13.webp" alt="HRMS-HRIS 1" onclick="openGallery('hrmshris', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h15_17.webp" alt="HRMS-HRIS 2" onclick="openGallery('hrmshris', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h15_25.webp" alt="HRMS-HRIS 3" onclick="openGallery('hrmshris', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h15_42.webp" alt="HRMS-HRIS 4" onclick="openGallery('hrmshris', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h15_52.webp" alt="HRMS-HRIS 5" onclick="openGallery('hrmshris', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h16_37.webp" alt="HRMS-HRIS 6" onclick="openGallery('hrmshris', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/HRMS-HRIS/2026-08-22_06h17_48.webp" alt="HRMS-HRIS 7" onclick="openGallery('hrmshris', 6)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('hrmshris', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('hrmshris', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="hrmshris-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Mom Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
@@ -630,18 +681,18 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/MOM/2026-05-21_14h33_10.png" alt="MOM 1" onclick="openGallery('mom', 0)">
-                                            <img src="projectimg/MOM/2026-05-21_14h34_30.png" alt="MOM 2" onclick="openGallery('mom', 1)">
-                                            <img src="projectimg/MOM/2026-05-21_14h34_41.png" alt="MOM 3" onclick="openGallery('mom', 2)">
-                                            <img src="projectimg/MOM/2026-05-21_14h34_47.png" alt="MOM 4" onclick="openGallery('mom', 3)">
-                                            <img src="projectimg/MOM/2026-05-22_17h27_12.png" alt="MOM 5" onclick="openGallery('mom', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MOM/2026-05-21_14h33_10.png" alt="MOM 1" onclick="openGallery('mom', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MOM/2026-05-21_14h34_30.png" alt="MOM 2" onclick="openGallery('mom', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MOM/2026-05-21_14h34_41.png" alt="MOM 3" onclick="openGallery('mom', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MOM/2026-05-21_14h34_47.png" alt="MOM 4" onclick="openGallery('mom', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/MOM/2026-05-22_17h27_12.png" alt="MOM 5" onclick="openGallery('mom', 4)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('mom', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('mom', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('mom', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('mom', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -676,17 +727,17 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/APDM/2026-05-21_14h40_27.png" alt="APDM 1" onclick="openGallery('apdm', 0)">
-                                            <img src="projectimg/APDM/2026-05-21_14h40_34.png" alt="APDM 2" onclick="openGallery('apdm', 1)">
-                                            <img src="projectimg/APDM/2026-05-21_14h40_53.png" alt="APDM 3" onclick="openGallery('apdm', 2)">
-                                            <img src="projectimg/APDM/2026-05-21_14h41_04.png" alt="APDM 4" onclick="openGallery('apdm', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APDM/2026-05-21_14h40_27.png" alt="APDM 1" onclick="openGallery('apdm', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APDM/2026-05-21_14h40_34.png" alt="APDM 2" onclick="openGallery('apdm', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APDM/2026-05-21_14h40_53.png" alt="APDM 3" onclick="openGallery('apdm', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/APDM/2026-05-21_14h41_04.png" alt="APDM 4" onclick="openGallery('apdm', 3)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('apdm', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('apdm', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('apdm', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('apdm', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -721,25 +772,25 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h19_13.webp" alt="Ceklist 1" onclick="openGallery('ceklist', 0)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h19_24.webp" alt="Ceklist 2" onclick="openGallery('ceklist', 1)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h19_32.webp" alt="Ceklist 3" onclick="openGallery('ceklist', 2)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h19_42.webp" alt="Ceklist 4" onclick="openGallery('ceklist', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h19_13.webp" alt="Ceklist 1" onclick="openGallery('ceklist', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h19_24.webp" alt="Ceklist 2" onclick="openGallery('ceklist', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h19_32.webp" alt="Ceklist 3" onclick="openGallery('ceklist', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h19_42.webp" alt="Ceklist 4" onclick="openGallery('ceklist', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h19_58.webp" alt="Ceklist 5" onclick="openGallery('ceklist', 4)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h20_06.webp" alt="Ceklist 6" onclick="openGallery('ceklist', 5)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h20_18.webp" alt="Ceklist 7" onclick="openGallery('ceklist', 6)">
-                                            <img src="projectimg/Ceklist/2026-02-02_12h20_28.webp" alt="Ceklist 8" onclick="openGallery('ceklist', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h19_58.webp" alt="Ceklist 5" onclick="openGallery('ceklist', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h20_06.webp" alt="Ceklist 6" onclick="openGallery('ceklist', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h20_18.webp" alt="Ceklist 7" onclick="openGallery('ceklist', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ceklist/2026-02-02_12h20_28.webp" alt="Ceklist 8" onclick="openGallery('ceklist', 7)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('ceklist', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('ceklist', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('ceklist', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('ceklist', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -775,23 +826,23 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_47.webp" alt="IT Ticket 1" onclick="openGallery('ticket', 0)">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_50.webp" alt="IT Ticket 2" onclick="openGallery('ticket', 1)">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h20_56.webp" alt="IT Ticket 3" onclick="openGallery('ticket', 2)">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_12.webp" alt="IT Ticket 4" onclick="openGallery('ticket', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h20_47.webp" alt="IT Ticket 1" onclick="openGallery('ticket', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h20_50.webp" alt="IT Ticket 2" onclick="openGallery('ticket', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h20_56.webp" alt="IT Ticket 3" onclick="openGallery('ticket', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h21_12.webp" alt="IT Ticket 4" onclick="openGallery('ticket', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_32.webp" alt="IT Ticket 5" onclick="openGallery('ticket', 4)">
-                                            <img src="projectimg/IT Ticket/2026-02-02_12h21_48.webp" alt="IT Ticket 6" onclick="openGallery('ticket', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h21_32.webp" alt="IT Ticket 5" onclick="openGallery('ticket', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Ticket/2026-02-02_12h21_48.webp" alt="IT Ticket 6" onclick="openGallery('ticket', 5)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('ticket', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('ticket', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('ticket', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('ticket', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -827,17 +878,17 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Production Stamping/2026-08-22_09h26_17.webp" alt="Production 1" onclick="openGallery('production', 0)">
-                                            <img src="projectimg/Production Stamping/2026-08-22_09h25_40.webp" alt="Production 2" onclick="openGallery('production', 1)">
-                                            <img src="projectimg/Production Stamping/2026-08-22_09h25_26.webp" alt="Production 3" onclick="openGallery('production', 2)">
-                                            <img src="projectimg/Production Stamping/2026-08-22_09h25_30.webp" alt="Production 4" onclick="openGallery('production', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Production Stamping/2026-08-22_09h26_17.webp" alt="Production 1" onclick="openGallery('production', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Production Stamping/2026-08-22_09h25_40.webp" alt="Production 2" onclick="openGallery('production', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Production Stamping/2026-08-22_09h25_26.webp" alt="Production 3" onclick="openGallery('production', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Production Stamping/2026-08-22_09h25_30.webp" alt="Production 4" onclick="openGallery('production', 3)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('production', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('production', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('production', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('production', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -874,31 +925,31 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/OEE Welding/2026-08-21_16h45_55.png" alt="OEE 1" onclick="openGallery('oee', 0)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_01.webp" alt="OEE 2" onclick="openGallery('oee', 1)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_07.webp" alt="OEE 3" onclick="openGallery('oee', 2)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_13.webp" alt="OEE 4" onclick="openGallery('oee', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-08-21_16h45_55.png" alt="OEE 1" onclick="openGallery('oee', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_01.webp" alt="OEE 2" onclick="openGallery('oee', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_07.webp" alt="OEE 3" onclick="openGallery('oee', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_13.webp" alt="OEE 4" onclick="openGallery('oee', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_16.webp" alt="OEE 5" onclick="openGallery('oee', 4)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_19.webp" alt="OEE 6" onclick="openGallery('oee', 5)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_22.webp" alt="OEE 7" onclick="openGallery('oee', 6)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_29.webp" alt="OEE 8" onclick="openGallery('oee', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_16.webp" alt="OEE 5" onclick="openGallery('oee', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_19.webp" alt="OEE 6" onclick="openGallery('oee', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_22.webp" alt="OEE 7" onclick="openGallery('oee', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_29.webp" alt="OEE 8" onclick="openGallery('oee', 7)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h18_34.webp" alt="OEE 9" onclick="openGallery('oee', 8)">
-                                            <img src="projectimg/OEE Welding/2026-02-02_12h31_00.webp" alt="OEE 10" onclick="openGallery('oee', 9)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h18_34.webp" alt="OEE 9" onclick="openGallery('oee', 8)">
+                                            <img loading="lazy" decoding="async" src="projectimg/OEE Welding/2026-02-02_12h31_00.webp" alt="OEE 10" onclick="openGallery('oee', 9)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('oee', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('oee', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('oee', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('oee', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -932,26 +983,26 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_07.png" alt="AI Camera 1" onclick="openGallery('aicamera', 0)">
-                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_18.png" alt="AI Camera 2" onclick="openGallery('aicamera', 1)">
-                                            <img src="projectimg/Ai Camera Inspection/2026-02-02_12h25_36.png" alt="AI Camera 3" onclick="openGallery('aicamera', 2)">
-                                            <img src="projectimg/Ai Camera Inspection/2026-08-13_08h52_25.png" alt="AI Camera 4" onclick="openGallery('aicamera', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-02-02_12h25_07.png" alt="AI Camera 1" onclick="openGallery('aicamera', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-02-02_12h25_18.png" alt="AI Camera 2" onclick="openGallery('aicamera', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-02-02_12h25_36.png" alt="AI Camera 3" onclick="openGallery('aicamera', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-08-13_08h52_25.png" alt="AI Camera 4" onclick="openGallery('aicamera', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ai Camera Inspection/2026-08-13_08h54_54.png" alt="AI Camera 5" onclick="openGallery('aicamera', 4)">
-                                            <img src="projectimg/Ai Camera Inspection/2026-08-13_09h00_39.png" alt="AI Camera 6" onclick="openGallery('aicamera', 5)">
-                                            <img src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-25-45.jpg" alt="AI Camera 7" onclick="openGallery('aicamera', 6)">
-                                            <img src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-25-45 (2).jpg" alt="AI Camera 8" onclick="openGallery('aicamera', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-08-13_08h54_54.png" alt="AI Camera 5" onclick="openGallery('aicamera', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-08-13_09h00_39.png" alt="AI Camera 6" onclick="openGallery('aicamera', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-25-45.jpg" alt="AI Camera 7" onclick="openGallery('aicamera', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-25-45 (2).jpg" alt="AI Camera 8" onclick="openGallery('aicamera', 7)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-26-52.jpg" alt="AI Camera 9" onclick="openGallery('aicamera', 8)">
-                                            <img src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-28-06.jpg" alt="AI Camera 10" onclick="openGallery('aicamera', 9)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-26-52.jpg" alt="AI Camera 9" onclick="openGallery('aicamera', 8)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-28-06.jpg" alt="AI Camera 10" onclick="openGallery('aicamera', 9)">
                                             <div class="relative rounded-lg overflow-hidden cursor-pointer border border-gray-200 bg-slate-900" onclick="openGallery('aicamera', 10)">
-                                                <img src="projectimg/Ai Camera Inspection/2026-08-21_14h58_14.png" alt="AI Camera Video Preview" class="w-full h-28 object-cover opacity-80">
+                                                <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-08-21_14h58_14.png" alt="AI Camera Video Preview" class="w-full h-28 object-cover opacity-80">
                                                 <div class="absolute inset-0 flex items-center justify-center bg-black/30">
                                                     <i class="fas fa-play-circle text-white text-3xl"></i>
                                                 </div>
@@ -961,10 +1012,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('aicamera', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('aicamera', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('aicamera', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('aicamera', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -998,25 +1049,25 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_41.webp" alt="Eng Data 1" onclick="openGallery('engdata', 0)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_47.webp" alt="Eng Data 2" onclick="openGallery('engdata', 1)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_50.webp" alt="Eng Data 3" onclick="openGallery('engdata', 2)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_55.webp" alt="Eng Data 4" onclick="openGallery('engdata', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h27_41.webp" alt="Eng Data 1" onclick="openGallery('engdata', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h27_47.webp" alt="Eng Data 2" onclick="openGallery('engdata', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h27_50.webp" alt="Eng Data 3" onclick="openGallery('engdata', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h27_55.webp" alt="Eng Data 4" onclick="openGallery('engdata', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h27_59.webp" alt="Eng Data 5" onclick="openGallery('engdata', 4)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_16.webp" alt="Eng Data 6" onclick="openGallery('engdata', 5)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_20.webp" alt="Eng Data 7" onclick="openGallery('engdata', 6)">
-                                            <img src="projectimg/Engineering Data/2026-02-02_12h28_29.webp" alt="Eng Data 8" onclick="openGallery('engdata', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h27_59.webp" alt="Eng Data 5" onclick="openGallery('engdata', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h28_16.webp" alt="Eng Data 6" onclick="openGallery('engdata', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h28_20.webp" alt="Eng Data 7" onclick="openGallery('engdata', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Engineering Data/2026-02-02_12h28_29.webp" alt="Eng Data 8" onclick="openGallery('engdata', 7)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('engdata', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('engdata', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('engdata', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('engdata', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -1050,16 +1101,16 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/Ik Digital/2026-02-02_12h26_34.webp" alt="IK Digital 1" onclick="openGallery('ikdigital', 0)">
-                                            <img src="projectimg/Ik Digital/2026-02-02_12h26_45.webp" alt="IK Digital 2" onclick="openGallery('ikdigital', 1)">
-                                            <img src="projectimg/Ik Digital/2026-02-02_12h32_16.webp" alt="IK Digital 3" onclick="openGallery('ikdigital', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ik Digital/2026-02-02_12h26_34.webp" alt="IK Digital 1" onclick="openGallery('ikdigital', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ik Digital/2026-02-02_12h26_45.webp" alt="IK Digital 2" onclick="openGallery('ikdigital', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Ik Digital/2026-02-02_12h32_16.webp" alt="IK Digital 3" onclick="openGallery('ikdigital', 2)">
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('ikdigital', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('ikdigital', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('ikdigital', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('ikdigital', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -1106,43 +1157,43 @@
                                 <div class="project-slider-track">
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Security/2026-02-02_12h57_21.webp" alt="IT Security 1" onclick="openGallery('itsecurity', 0)">
-                                            <img src="projectimg/IT Security/2026-02-02_12h57_27.webp" alt="IT Security 2" onclick="openGallery('itsecurity', 1)">
-                                            <img src="projectimg/IT Security/2026-02-02_12h57_33.webp" alt="IT Security 3" onclick="openGallery('itsecurity', 2)">
-                                            <img src="projectimg/IT Security/2026-02-02_12h57_38.webp" alt="IT Security 4" onclick="openGallery('itsecurity', 3)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-02-02_12h57_21.webp" alt="IT Security 1" onclick="openGallery('itsecurity', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-02-02_12h57_27.webp" alt="IT Security 2" onclick="openGallery('itsecurity', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-02-02_12h57_33.webp" alt="IT Security 3" onclick="openGallery('itsecurity', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-02-02_12h57_38.webp" alt="IT Security 4" onclick="openGallery('itsecurity', 3)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Security/2026-05-17_10h45_40.png" alt="IT Security 5" onclick="openGallery('itsecurity', 4)">
-                                            <img src="projectimg/IT Security/2026-05-17_10h45_56.png" alt="IT Security 6" onclick="openGallery('itsecurity', 5)">
-                                            <img src="projectimg/IT Security/2026-05-17_10h46_17.png" alt="IT Security 7" onclick="openGallery('itsecurity', 6)">
-                                            <img src="projectimg/IT Security/2026-05-17_16h36_25.png" alt="IT Security 8" onclick="openGallery('itsecurity', 7)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_10h45_40.png" alt="IT Security 5" onclick="openGallery('itsecurity', 4)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_10h45_56.png" alt="IT Security 6" onclick="openGallery('itsecurity', 5)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_10h46_17.png" alt="IT Security 7" onclick="openGallery('itsecurity', 6)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_16h36_25.png" alt="IT Security 8" onclick="openGallery('itsecurity', 7)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Security/2026-05-17_16h37_02.png" alt="IT Security 9" onclick="openGallery('itsecurity', 8)">
-                                            <img src="projectimg/IT Security/2026-05-17_16h51_52.png" alt="IT Security 10" onclick="openGallery('itsecurity', 9)">
-                                            <img src="projectimg/IT Security/2026-05-17_16h52_41.png" alt="IT Security 11" onclick="openGallery('itsecurity', 10)">
-                                            <img src="projectimg/IT Security/2026-05-17_17h24_33.png" alt="IT Security 12" onclick="openGallery('itsecurity', 11)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_16h37_02.png" alt="IT Security 9" onclick="openGallery('itsecurity', 8)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_16h51_52.png" alt="IT Security 10" onclick="openGallery('itsecurity', 9)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_16h52_41.png" alt="IT Security 11" onclick="openGallery('itsecurity', 10)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h24_33.png" alt="IT Security 12" onclick="openGallery('itsecurity', 11)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Security/2026-05-17_17h24_42.png" alt="IT Security 13" onclick="openGallery('itsecurity', 12)">
-                                            <img src="projectimg/IT Security/2026-05-17_17h41_15.png" alt="IT Security 14" onclick="openGallery('itsecurity', 13)">
-                                            <img src="projectimg/IT Security/2026-05-17_17h41_24.png" alt="IT Security 15" onclick="openGallery('itsecurity', 14)">
-                                            <img src="projectimg/IT Security/2026-05-17_17h44_00.png" alt="IT Security 16" onclick="openGallery('itsecurity', 15)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h24_42.png" alt="IT Security 13" onclick="openGallery('itsecurity', 12)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h41_15.png" alt="IT Security 14" onclick="openGallery('itsecurity', 13)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h41_24.png" alt="IT Security 15" onclick="openGallery('itsecurity', 14)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h44_00.png" alt="IT Security 16" onclick="openGallery('itsecurity', 15)">
                                         </div>
                                     </div>
                                     <div class="project-slide">
                                         <div class="grid">
-                                            <img src="projectimg/IT Security/2026-05-17_17h45_21.png" alt="IT Security 17" onclick="openGallery('itsecurity', 16)">
-                                            <img src="projectimg/IT Security/2026-05-17_17h51_51.png" alt="IT Security 18" onclick="openGallery('itsecurity', 17)">
-                                            <img src="projectimg/IT Security/photo_2026-05-17_17-51-04.jpg" alt="IT Security 19" onclick="openGallery('itsecurity', 18)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h45_21.png" alt="IT Security 17" onclick="openGallery('itsecurity', 16)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h51_51.png" alt="IT Security 18" onclick="openGallery('itsecurity', 17)">
+                                            <img loading="lazy" decoding="async" src="projectimg/IT Security/photo_2026-05-17_17-51-04.jpg" alt="IT Security 19" onclick="openGallery('itsecurity', 18)">
                                             <div class="relative bg-gray-800 rounded-lg overflow-hidden cursor-pointer" onclick="openGallery('itsecurity', 19)">
-                                                <video class="w-full h-28 object-cover" poster="projectimg/IT Security/2026-05-17_16h37_02.png">
+                                                <video class="w-full h-28 object-cover" preload="none" poster="projectimg/IT Security/2026-05-17_16h37_02.png">
                                                     <source src="projectimg/IT Security/2026-05-17_16h55_07.mp4" type="video/mp4">
                                                 </video>
                                                 <div class="absolute inset-0 flex items-center justify-center bg-black/30">
@@ -1153,10 +1204,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="slider-btn prev" onclick="moveProjectSlider('itsecurity', -1)">
+                                <button type="button" aria-label="Previous screenshots" class="slider-btn prev" onclick="moveProjectSlider('itsecurity', -1)">
                                     <i class="fas fa-chevron-left"></i>
                                 </button>
-                                <button class="slider-btn next" onclick="moveProjectSlider('itsecurity', 1)">
+                                <button type="button" aria-label="Next screenshots" class="slider-btn next" onclick="moveProjectSlider('itsecurity', 1)">
                                     <i class="fas fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -1172,17 +1223,17 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center fade-in">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Let's Work Together</h2>
-            <p class="text-gray-600 mb-12 text-lg">Interested in collaborating or have a question? Feel free to reach out!</p>
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Discuss a Role or System Challenge</h2>
+            <p class="text-gray-600 mb-12 text-lg">For opportunities involving manufacturing systems, infrastructure, full-stack delivery, AI orchestration, or operational digitalization, contact me directly.</p>
             
             <div class="flex justify-center gap-6 mb-12">
-                <a href="https://github.com/jamaludindipa" target="_blank" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                <a href="https://github.com/jamaludindipa" target="_blank" rel="noopener noreferrer" aria-label="Jamaludin Dipa on GitHub" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
                     <i class="fab fa-github text-2xl"></i>
                 </a>
-                <a href="mailto:jamaludinsa@gmail.com" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                <a href="mailto:jamaludinsa@gmail.com" aria-label="Email Jamaludin Dipa" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
                     <i class="fas fa-envelope text-2xl"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/jamaludin-dipa-1660ba107/" target="_blank" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
+                <a href="https://www.linkedin.com/in/jamaludin-dipa-1660ba107/" target="_blank" rel="noopener noreferrer" aria-label="Jamaludin Dipa on LinkedIn" class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-200 transition-colors">
                     <i class="fab fa-linkedin text-2xl"></i>
                 </a>
             </div>
@@ -1201,21 +1252,21 @@
     </footer>
 
     <!-- Image Modal -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
-        <img id="modal-image" src="" alt="Profile Photo" class="max-w-5xl max-h-[90vh] object-contain rounded-lg" onclick="event.stopPropagation()">
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Profile photo preview" onclick="closeModal()">
+        <button type="button" aria-label="Close profile photo" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+        <img id="modal-image" alt="Profile Photo" class="max-w-5xl max-h-[90vh] object-contain rounded-lg" onclick="event.stopPropagation()">
     </div>
 
     <!-- Gallery Modal -->
-    <div id="gallery-modal" class="gallery-modal">
+    <div id="gallery-modal" class="gallery-modal" role="dialog" aria-modal="true" aria-label="Project media gallery">
         <div class="gallery-modal-content">
-            <button class="gallery-modal-close" onclick="closeGallery()">&times;</button>
-            <button class="gallery-modal-btn prev" onclick="moveGallery(-1)">
+            <button type="button" aria-label="Close project gallery" class="gallery-modal-close" onclick="closeGallery()">&times;</button>
+            <button type="button" aria-label="Previous gallery item" class="gallery-modal-btn prev" onclick="moveGallery(-1)">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            <img id="gallery-image" class="gallery-modal-image" src="" alt="">
-            <video id="gallery-video" class="gallery-modal-video" controls style="display: none;"></video>
-            <button class="gallery-modal-btn next" onclick="moveGallery(1)">
+            <img id="gallery-image" class="gallery-modal-image" alt="Selected project media">
+            <video id="gallery-video" class="gallery-modal-video" controls preload="none" style="display: none;"></video>
+            <button type="button" aria-label="Next gallery item" class="gallery-modal-btn next" onclick="moveGallery(1)">
                 <i class="fas fa-chevron-right"></i>
             </button>
             <div id="gallery-counter" class="gallery-modal-counter"></div>
@@ -1281,7 +1332,9 @@
             // Create dots
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
+                dot.type = 'button';
                 dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Show screenshot group ${i + 1} of ${totalSlides}`);
                 dot.onclick = () => goToProjectSlide(projectId, i);
                 dotsContainer.appendChild(dot);
             }
@@ -1535,6 +1588,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             initProjectSlider('hrmshris');
             initProjectSlider('meta');
+            initProjectSlider('apjm');
             initProjectSlider('mom');
             initProjectSlider('apdm');
             initProjectSlider('ceklist');
@@ -1545,6 +1599,18 @@
             initProjectSlider('engdata');
             initProjectSlider('ikdigital');
             initProjectSlider('itsecurity');
+
+            document.querySelectorAll('img[onclick^="openGallery"]').forEach((thumbnail) => {
+                thumbnail.tabIndex = 0;
+                thumbnail.setAttribute('role', 'button');
+                thumbnail.setAttribute('aria-label', `Open ${thumbnail.alt || 'project screenshot'} in gallery`);
+                thumbnail.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        thumbnail.click();
+                    }
+                });
+            });
         });
 
         // Modal functions (for backward compatibility)

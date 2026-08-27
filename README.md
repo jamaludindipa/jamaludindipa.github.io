@@ -4,7 +4,11 @@ Portfolio website showcasing manufacturing systems, internal business applicatio
 
 ## Live Preview
 
-View the portfolio at: `https://jamaludindipa.github.io/portfolio/`
+View the portfolio at: `https://jamaludindipa.github.io/`
+
+## Ownership
+
+Every system presented in this portfolio was independently handled end to end by Jamaludin Dipa: operational process analysis, solution and workflow design, application development, data and integration work, testing, deployment, troubleshooting, and iterative improvement.
 
 ## Who This Portfolio Is For
 
@@ -23,12 +27,14 @@ This portfolio brings together the main project areas currently presented on the
 
 ## Project Directory
 
+- `projects/hrms-hris.html` - HRMS-HRIS
 - `projects/meta.html` - META - Manufacturing Execution & Traceability Application
+- `projects/apjm.html` - Automatic Preventive Jig Welding Assy
 - `projects/mom.html` - Mom (Minute Of Meeting Online)
 - `projects/apdm.html` - Automatic Preventive Dies Maintenance
 - `projects/ceklist.html` - Ceklist Management System
 - `projects/it-ticket.html` - IT Ticket Management
-- `projects/stamping.html` - Aplikasi Stamping
+- `projects/stamping.html` - ProdControl Stamping
 - `projects/oee-welding.html` - OEE Welding Single Product
 - `projects/ai-camera-inspection.html` - AI Camera Inspection QC Check
 - `projects/engineering-data.html` - Engineering Data Project Masspro
@@ -43,8 +49,8 @@ Flagship projects are the clearest representation of my current direction and st
 
 - `META - Manufacturing Execution & Traceability Application`
   Flagship manufacturing platform connecting work order execution, material readiness, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
-- `Aplikasi Stamping`
-  Production dashboard and manufacturing reporting flow for stamping operations.
+- `ProdControl Stamping`
+  Production control workflow for stamping work orders, route progress, plan versus actual, WIP visibility, and mobile shopfloor input.
 - `OEE Welding Single Product`
   Real-time welding effectiveness monitoring with manufacturing analytics and PLC-oriented operational visibility.
 - `Automatic Preventive Dies Maintenance`
@@ -59,7 +65,7 @@ Flagship projects are the clearest representation of my current direction and st
 - `IT Ticket Management`
   Internal IT ticketing workflow with operational tracking and support handling.
 - `IK Digital`
-  Digital internal platform for documentation and knowledge distribution.
+  Scan-based digital work instruction for final inspection quality stations with inspection video and defect-reference visibility.
 
 ### AI, Data, and Security
 
@@ -137,7 +143,7 @@ META is a Manufacturing Execution System designed to connect work order executio
 
 #### Security & Privacy Notice
 
-Screenshots and data shown are sanitized or dummy data. Internal credentials, database configuration, company private endpoints, and production secrets are excluded.
+Screenshots and data shown are sanitized for portfolio use. Internal credentials, database configuration, company private endpoints, and production secrets are excluded.
 
 Additional applications in this portfolio also have dedicated detail pages so reviewers can inspect status, trust context, contribution, and stack per project without overloading the landing page.
 
@@ -156,6 +162,8 @@ jamalgithub/
 ├── index.html
 ├── projectimg/
 │   ├── MES Traceability/
+│   ├── HRMS-HRIS/
+│   ├── APJM/
 │   ├── MOM/
 │   ├── APDM/
 │   ├── Ceklist/
