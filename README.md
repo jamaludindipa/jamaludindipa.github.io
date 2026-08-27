@@ -182,4 +182,4 @@ jamalgithub/
 
 - GitHub: [@jamaludindipa](https://github.com/jamaludindipa)
 - LinkedIn: [Jamaludin Dipa](https://www.linkedin.com/in/jamaludin-dipa-1660ba107/)
-- Email: `jamaludinsa@gmail.com`
+- Email: `jamalludinsa@gmail.com`
