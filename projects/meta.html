@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="META case study: a solo-built manufacturing execution and traceability system connecting work orders, production, warehouse, quality, delivery, and genealogy flows.">
+    <meta name="description" content="META case study: a solo-built manufacturing execution and traceability system connecting work orders, IoT/PLC-integrated shopfloor production, warehouse, quality, delivery, and genealogy flows.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://jamaludindipa.github.io/projects/meta.html">
     <link rel="icon" href="../favicon.ico" sizes="any">
     <meta name="theme-color" content="#0f172a">
     <meta property="og:type" content="article">
     <meta property="og:title" content="META - MES &amp; Traceability | Jamaludin Dipa">
-    <meta property="og:description" content="Solo end-to-end MES case study covering manufacturing execution, movement, quality, and traceability.">
+    <meta property="og:description" content="Solo end-to-end MES case study covering IoT/PLC-integrated shopfloor production, movement, quality, and traceability.">
     <meta property="og:url" content="https://jamaludindipa.github.io/projects/meta.html">
     <meta property="og:image" content="https://jamaludindipa.github.io/og-thumbnail.jpg">
     <title>META - Manufacturing Execution &amp; Traceability | Jamaludin Dipa</title>
@@ -22,12 +22,13 @@
         <div class="rounded-[5px] bg-white shadow-lg border border-slate-200 p-5 sm:p-8 md:p-12">
             <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-3">Flagship Project • Manufacturing Execution System</p>
             <h1 class="text-3xl sm:text-4xl font-bold mb-4">META - Manufacturing Execution &amp; Traceability Application</h1>
-            <p class="text-base sm:text-lg text-slate-600 mb-8">Internal manufacturing workflow platform for work order execution, warehouse movement, quality inspection, and end-to-end traceability.</p>
+            <p class="text-base sm:text-lg text-slate-600 mb-8">Internal manufacturing workflow platform for work order execution, IoT/PLC-integrated shopfloor production, warehouse movement, quality inspection, and end-to-end traceability.</p>
             <div class="flex flex-wrap gap-2 mb-10">
                 <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm font-semibold">Solo End-to-End Ownership</span>
                 <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm">Internal MVP</span>
                 <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Manufacturing Workflow</span>
                 <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm">Operational Digitalization</span>
+                <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm">IoT / PLC Integration</span>
                 <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm">Traceability Foundation</span>
                 <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Sanitized Screenshots</span>
             </div>
@@ -49,14 +50,14 @@
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Workflow Illustration</h2>
                 <img loading="lazy" decoding="async" src="../projectimg/MES Traceability/meta-e2e-workflow-illustration.png" alt="Illustration of the documented META end-to-end manufacturing workflow from master data and ERP sync to work order, execution, movement, quality, FG delivery, and traceability" class="w-full rounded-[5px] shadow-lg border border-slate-200 mb-5">
-                <p class="text-slate-600 leading-relaxed">The illustrated flow follows the active end-to-end chain in the current MVP: master data and ERP sync prepare references, PPIC releases Work Order Stamping, leaders open Job Card, execution continues through manual or OEE mode, valid output enters the movement queue, then the material travels through WIP Supermarket or Final Inspection, FI Movement, Warehouse FG &amp; Delivery, and finally into dashboard and traceability visibility.</p>
+                <p class="text-slate-600 leading-relaxed">The illustrated flow follows the active end-to-end chain in the current MVP: master data and ERP sync prepare references, PPIC releases Work Order Stamping, leaders open Job Card, and shopfloor execution continues through manual mode or OEE mode integrated with IoT/PLC production data. Valid output enters the movement queue, then the material travels through WIP Supermarket or Final Inspection, FI Movement, Warehouse FG &amp; Delivery, and finally into dashboard and traceability visibility.</p>
             </section>
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Documented Operational Flow</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
                     <li>Master data and ERP sync prepare product, BOM, routing, machine, shift, employee, and partner references.</li>
                     <li>PPIC creates or receives Work Order Stamping, then leaders manage sequence and open Job Card.</li>
-                    <li>Job Card becomes the official start point for manual execution or OEE/PLC execution.</li>
+                    <li>Job Card becomes the official start point for manual execution or OEE execution integrated with IoT/PLC data from the production shopfloor.</li>
                     <li>Valid stamping output enters an output queue before Stamping Movement sends it to WIP Supermarket or Final Inspection.</li>
                     <li>Final Inspection, FI Movement, and Warehouse FG &amp; Delivery continue the chain toward finish good and shipment readiness.</li>
                     <li>Traceability and MES Dashboard are expected to read auditable transaction and event references across the full flow.</li>
@@ -66,6 +67,7 @@
                 <h2 class="text-2xl font-bold mb-3">Key Capabilities</h2>
                 <ul class="list-disc pl-6 space-y-2 text-slate-600">
                     <li>Work order and Job Card visibility across execution, WIP, and final inspection stages.</li>
+                    <li>IoT/PLC shopfloor integration supporting machine real-time visibility and OEE-oriented production execution.</li>
                     <li>Reusable movement flow for request, picking, check OK, print movement, and destination transfer.</li>
                     <li>Traceability path from raw material, movement, and production output through FI, FG, and delivery.</li>
                     <li>Role-based Laravel Blade shell for MES, warehouse, quality, ERP sync, and traceability modules.</li>
@@ -73,7 +75,7 @@
             </section>
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Tech Stack</h2>
-                <p class="text-slate-600">Laravel 11, PHP 8.3, Blade, JavaScript, Tailwind CSS, MySQL, Playwright, GitLab, Linux Server, systemd.</p>
+                <p class="text-slate-600">Laravel 11, PHP 8.3, Blade, JavaScript, Tailwind CSS, MySQL, IoT/PLC integration, Playwright, GitLab, Linux Server, systemd.</p>
             </section>
             <section class="mb-10">
                 <h2 class="text-2xl font-bold mb-3">Current Status</h2>

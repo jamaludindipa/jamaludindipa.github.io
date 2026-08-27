@@ -48,7 +48,7 @@ Flagship projects are the clearest representation of my current direction and st
 ### Manufacturing & Operations
 
 - `META - Manufacturing Execution & Traceability Application`
-  Flagship manufacturing platform connecting work order execution, material readiness, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
+  Flagship manufacturing platform connecting work order execution, material readiness, IoT/PLC-integrated shopfloor production, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
 - `ProdControl Stamping`
   Production control workflow for stamping work orders, route progress, plan versus actual, WIP visibility, and mobile shopfloor input.
 - `OEE Welding Single Product`
@@ -82,7 +82,7 @@ Flagship projects are the clearest representation of my current direction and st
 
 #### Overview
 
-META is a Manufacturing Execution System designed to connect work order execution, material readiness, stamping production, real-time OEE, WIP supermarket, welding assembly, final inspection, finish good flow, delivery, and upstream-downstream traceability in one operational manufacturing platform.
+META is a Manufacturing Execution System designed to connect work order execution, material readiness, stamping production, IoT/PLC-integrated shopfloor execution, real-time OEE, WIP supermarket, welding assembly, final inspection, finish good flow, delivery, and upstream-downstream traceability in one operational manufacturing platform.
 
 #### Business Problem
 
