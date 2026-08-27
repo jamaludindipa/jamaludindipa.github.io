@@ -1262,7 +1262,7 @@
     </section>
 
     <!-- IT Security Projects Section -->
-    <section class="py-20 px-4 sm:px-6 bg-gray-50">
+    <section id="security-card-view" class="py-20 px-4 sm:px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Security & Infrastructure Flagship</h2>
             <p class="text-gray-600 text-center mb-16 fade-in">Security operations tooling, SIEM visibility, and threat-response oriented infrastructure.</p>
@@ -1725,14 +1725,16 @@
         function setProjectView(view, persist = true) {
             const selectedView = view === 'table' ? 'table' : 'card';
             const cardView = document.getElementById('project-card-view');
+            const securityCardView = document.getElementById('security-card-view');
             const tableView = document.getElementById('project-table-view');
             const cardButton = document.getElementById('card-view-button');
             const tableButton = document.getElementById('table-view-button');
 
-            if (!cardView || !tableView || !cardButton || !tableButton) return;
+            if (!cardView || !securityCardView || !tableView || !cardButton || !tableButton) return;
 
             const cardActive = selectedView === 'card';
             cardView.classList.toggle('hidden', !cardActive);
+            securityCardView.classList.toggle('hidden', !cardActive);
             tableView.classList.toggle('hidden', cardActive);
             cardButton.setAttribute('aria-pressed', String(cardActive));
             tableButton.setAttribute('aria-pressed', String(!cardActive));
