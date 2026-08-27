@@ -183,7 +183,7 @@
         .project-slider-container {
             position: relative;
             overflow: hidden;
-            border-radius: 0.5rem;
+            border-radius: 5px;
         }
         .project-slider-track {
             display: flex;
@@ -203,7 +203,7 @@
             width: 100%;
             height: 120px;
             object-fit: cover;
-            border-radius: 0.5rem;
+            border-radius: 5px;
             cursor: pointer;
             transition: transform 0.3s;
         }
@@ -234,12 +234,12 @@
             max-width: 100%;
             max-height: 85vh;
             object-fit: contain;
-            border-radius: 0.5rem;
+            border-radius: 5px;
         }
         .gallery-modal-video {
             max-width: 100%;
             max-height: 85vh;
-            border-radius: 0.5rem;
+            border-radius: 5px;
         }
         .gallery-modal-btn {
             position: absolute;
@@ -396,7 +396,7 @@
 
     <!-- Professional Snapshot -->
     <section aria-labelledby="ownership-heading" class="px-4 sm:px-6 pb-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto rounded-3xl overflow-hidden bg-slate-950 text-white shadow-xl">
+        <div class="max-w-6xl mx-auto rounded-[5px] overflow-hidden bg-slate-950 text-white shadow-xl">
             <div class="grid lg:grid-cols-[1.15fr_1fr]">
                 <div class="p-7 sm:p-10 lg:p-12 border-b border-slate-800 lg:border-b-0 lg:border-r">
                     <p class="text-xs font-bold uppercase tracking-[0.22em] text-cyan-300 mb-4">Independent End-to-End Ownership</p>
@@ -532,12 +532,12 @@
             <p class="text-gray-600 text-center mb-8 fade-in">Independently designed, built, tested, deployed, and improved across manufacturing, enterprise operations, AI, and infrastructure.</p>
 
             <div class="flex justify-center mb-12 fade-in">
-                <div class="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Choose project display mode">
-                    <button id="card-view-button" type="button" aria-pressed="true" onclick="setProjectView('card')" class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors">
+                <div class="inline-flex items-center gap-1 rounded-[5px] border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Choose project display mode">
+                    <button id="card-view-button" type="button" aria-pressed="true" onclick="setProjectView('card')" class="inline-flex items-center gap-2 rounded-[5px] bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors">
                         <i class="fas fa-grip" aria-hidden="true"></i>
                         Card View
                     </button>
-                    <button id="table-view-button" type="button" aria-pressed="false" onclick="setProjectView('table')" class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900">
+                    <button id="table-view-button" type="button" aria-pressed="false" onclick="setProjectView('table')" class="inline-flex items-center gap-2 rounded-[5px] px-4 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900">
                         <i class="fas fa-table-list" aria-hidden="true"></i>
                         Table View
                     </button>
@@ -547,7 +547,7 @@
             <div id="project-card-view" class="space-y-16">
 
                 <!-- META Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-emerald-700 text-sm font-semibold mb-2">FLAGSHIP PROJECT • MANUFACTURING EXECUTION SYSTEM</div>
@@ -619,7 +619,7 @@
                 </div>
 
                 <!-- APJM Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-sky-700 text-sm font-semibold mb-2">OEE WELDING EXTENSION • PREVENTIVE AUTOMATION</div>
@@ -679,7 +679,7 @@
                 </div>
                 
                 <!-- HRMS-HRIS Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-indigo-700 text-sm font-semibold mb-2">INTERNAL MVP • HR WORKFLOW PLATFORM</div>
@@ -735,7 +735,7 @@
                 </div>
 
                 <!-- Mom Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-red-600 text-sm font-semibold mb-2">FLAGSHIP PROJECT • FULL STACK LARAVEL REACT</div>
@@ -782,7 +782,7 @@
                 </div>
 
                 <!-- Automatic Preventive Dies Maintenance Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-6 sm:p-8">
                             <div class="text-orange-600 text-sm font-semibold mb-2">MAINTENANCE SYSTEM</div>
@@ -827,7 +827,7 @@
                 </div>
 
                 <!-- Ceklist Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-blue-600 text-sm font-semibold mb-2">WEB APPLICATION</div>
@@ -880,7 +880,7 @@
                 </div>
 
                 <!-- IT Ticket Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-purple-600 text-sm font-semibold mb-2">TICKETING SYSTEM</div>
@@ -932,7 +932,7 @@
                 </div>
 
                 <!-- Production Stamping Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-green-600 text-sm font-semibold mb-2">MANUFACTURING EXECUTION</div>
@@ -978,7 +978,7 @@
                 </div>
 
                 <!-- OEE Welding Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-orange-600 text-sm font-semibold mb-2">MANUFACTURING</div>
@@ -1039,7 +1039,7 @@
                 </div>
 
                 <!-- AI Camera Inspection Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-blue-600 text-sm font-semibold mb-2">AI & COMPUTER VISION</div>
@@ -1081,7 +1081,7 @@
                                         <div class="grid">
                                             <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-26-52.jpg" alt="AI Camera 9" onclick="openGallery('aicamera', 8)">
                                             <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/photo_2026-08-14_07-28-06.jpg" alt="AI Camera 10" onclick="openGallery('aicamera', 9)">
-                                            <div class="relative rounded-lg overflow-hidden cursor-pointer border border-gray-200 bg-slate-900" onclick="openGallery('aicamera', 10)">
+                                            <div class="relative rounded-[5px] overflow-hidden cursor-pointer border border-gray-200 bg-slate-900" onclick="openGallery('aicamera', 10)">
                                                 <img loading="lazy" decoding="async" src="projectimg/Ai Camera Inspection/2026-08-21_14h58_14.png" alt="AI Camera Video Preview" class="w-full h-28 object-cover opacity-80">
                                                 <div class="absolute inset-0 flex items-center justify-center bg-black/30">
                                                     <i class="fas fa-play-circle text-white text-3xl"></i>
@@ -1105,7 +1105,7 @@
                 </div>
 
                 <!-- Engineering Data Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-teal-600 text-sm font-semibold mb-2">DATA MANAGEMENT</div>
@@ -1157,7 +1157,7 @@
                 </div>
 
                 <!-- IK Digital Project -->
-                <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-pink-600 text-sm font-semibold mb-2">DIGITAL PLATFORM</div>
@@ -1201,7 +1201,7 @@
 
             </div>
 
-            <div id="project-table-view" class="hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+            <div id="project-table-view" class="hidden overflow-hidden rounded-[5px] border border-slate-200 bg-white shadow-lg">
                 <div class="overflow-x-auto">
                     <table class="w-full min-w-[980px] border-collapse text-left">
                         <caption class="sr-only">Portfolio projects with domain, focus, technology stack, ownership, and case study links</caption>
@@ -1337,7 +1337,7 @@
             <div class="space-y-12">
 
                 <!-- IT Security - Wazuh, Shuffle, Iris, MISP -->
-                <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg fade-in">
+                <div class="project-card bg-white rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
                         <div class="md:w-1/2 p-8">
                             <div class="text-red-600 text-sm font-semibold mb-2">FLAGSHIP PROJECT • SECURITY & THREAT DETECTION</div>
@@ -1397,7 +1397,7 @@
                                             <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h45_21.png" alt="IT Security 17" onclick="openGallery('itsecurity', 16)">
                                             <img loading="lazy" decoding="async" src="projectimg/IT Security/2026-05-17_17h51_51.png" alt="IT Security 18" onclick="openGallery('itsecurity', 17)">
                                             <img loading="lazy" decoding="async" src="projectimg/IT Security/photo_2026-05-17_17-51-04.jpg" alt="IT Security 19" onclick="openGallery('itsecurity', 18)">
-                                            <div class="relative bg-gray-800 rounded-lg overflow-hidden cursor-pointer" onclick="openGallery('itsecurity', 19)">
+                                            <div class="relative bg-gray-800 rounded-[5px] overflow-hidden cursor-pointer" onclick="openGallery('itsecurity', 19)">
                                                 <video class="w-full h-28 object-cover" preload="none" poster="projectimg/IT Security/2026-05-17_16h37_02.png">
                                                     <source src="projectimg/IT Security/2026-05-17_16h55_07.mp4" type="video/mp4">
                                                 </video>
@@ -1459,7 +1459,7 @@
     <!-- Image Modal -->
     <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Profile photo preview" onclick="closeModal()">
         <button type="button" aria-label="Close profile photo" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
-        <img id="modal-image" alt="Profile Photo" class="max-w-5xl max-h-[90vh] object-contain rounded-lg" onclick="event.stopPropagation()">
+        <img id="modal-image" alt="Profile Photo" class="max-w-5xl max-h-[90vh] object-contain rounded-[5px]" onclick="event.stopPropagation()">
     </div>
 
     <!-- Gallery Modal -->
