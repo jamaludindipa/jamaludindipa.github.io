@@ -462,9 +462,22 @@
     <section id="projects" class="py-20 px-4 sm:px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 fade-in">Selected Systems &amp; Case Studies</h2>
-            <p class="text-gray-600 text-center mb-16 fade-in">Independently designed, built, tested, deployed, and improved across manufacturing, enterprise operations, AI, and infrastructure.</p>
+            <p class="text-gray-600 text-center mb-8 fade-in">Independently designed, built, tested, deployed, and improved across manufacturing, enterprise operations, AI, and infrastructure.</p>
+
+            <div class="flex justify-center mb-12 fade-in">
+                <div class="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-slate-100 p-1" role="group" aria-label="Choose project display mode">
+                    <button id="card-view-button" type="button" aria-pressed="true" onclick="setProjectView('card')" class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors">
+                        <i class="fas fa-grip" aria-hidden="true"></i>
+                        Card View
+                    </button>
+                    <button id="table-view-button" type="button" aria-pressed="false" onclick="setProjectView('table')" class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900">
+                        <i class="fas fa-table-list" aria-hidden="true"></i>
+                        Table View
+                    </button>
+                </div>
+            </div>
             
-            <div class="space-y-16">
+            <div id="project-card-view" class="space-y-16">
 
                 <!-- META Project -->
                 <div class="project-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg fade-in">
@@ -1120,6 +1133,131 @@
                 </div>
 
             </div>
+
+            <div id="project-table-view" class="hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[980px] border-collapse text-left">
+                        <caption class="sr-only">Portfolio projects with domain, focus, technology stack, ownership, and case study links</caption>
+                        <thead class="bg-slate-950 text-white">
+                            <tr>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Project</th>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Domain</th>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Operational Focus</th>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Core Stack</th>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Ownership</th>
+                                <th scope="col" class="px-5 py-4 text-xs font-semibold uppercase tracking-wider">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm text-slate-600">
+                            <tr class="transition-colors hover:bg-emerald-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">META - MES &amp; Traceability</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-emerald-100 px-3 py-1 font-medium text-emerald-700">Manufacturing</span></td>
+                                <td class="px-5 py-5">MES, warehouse, quality, delivery, and traceability</td>
+                                <td class="px-5 py-5">Laravel 11, PHP 8.3, Blade, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/meta.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-sky-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Automatic Preventive Jig Welding Assy</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-sky-100 px-3 py-1 font-medium text-sky-700">Manufacturing</span></td>
+                                <td class="px-5 py-5">Actual-output trigger, jig PM, evidence, and compliance</td>
+                                <td class="px-5 py-5">PHP, Laravel bridge, JavaScript, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/apjm.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-indigo-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">HRMS-HRIS</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-indigo-100 px-3 py-1 font-medium text-indigo-700">Enterprise HR</span></td>
+                                <td class="px-5 py-5">Desktop migration, biometric attendance, and HR workflow</td>
+                                <td class="px-5 py-5">Laravel, PHP, Vue, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/hrms-hris.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-rose-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Minute of Meeting Online</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-rose-100 px-3 py-1 font-medium text-rose-700">Enterprise</span></td>
+                                <td class="px-5 py-5">Meeting decisions, actions, ownership, and follow-up</td>
+                                <td class="px-5 py-5">Laravel, React, Inertia.js, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/mom.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-orange-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Automatic Preventive Dies Maintenance</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-orange-100 px-3 py-1 font-medium text-orange-700">Maintenance</span></td>
+                                <td class="px-5 py-5">Stroke threshold, scheduling, execution, and history</td>
+                                <td class="px-5 py-5">PHP, MySQL, Tailwind CSS, jQuery</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/apdm.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-blue-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Checklist Management System</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-700">Operations</span></td>
+                                <td class="px-5 py-5">Recurring checks, PM planning, verification, and history</td>
+                                <td class="px-5 py-5">PHP, MySQL, Tailwind CSS, jQuery</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/ceklist.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-violet-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">IT Ticket Management</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-violet-100 px-3 py-1 font-medium text-violet-700">IT Service</span></td>
+                                <td class="px-5 py-5">Request intake, assignment, resolution, and closure</td>
+                                <td class="px-5 py-5">PHP, Tailwind CSS, Python, Flask</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/it-ticket.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-green-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">ProdControl Stamping</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-green-100 px-3 py-1 font-medium text-green-700">Manufacturing</span></td>
+                                <td class="px-5 py-5">Work orders, route progress, WIP, and actual input</td>
+                                <td class="px-5 py-5">PHP, Chart.js, MySQL, Tailwind CSS</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/stamping.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-amber-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">OEE Welding Single Product</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-amber-100 px-3 py-1 font-medium text-amber-700">Industrial IoT</span></td>
+                                <td class="px-5 py-5">PLC, OPC UA, downtime, and real-time OEE visibility</td>
+                                <td class="px-5 py-5">PHP, MySQL, OPC UA, PLC Omron</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/oee-welding.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-cyan-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">AI Camera Inspection QC Check</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-cyan-100 px-3 py-1 font-medium text-cyan-700">AI &amp; Quality</span></td>
+                                <td class="px-5 py-5">Defect detection, OK-NG guidance, and visual evidence</td>
+                                <td class="px-5 py-5">Python, YOLO8, OpenCV</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/ai-camera-inspection.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-teal-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Engineering Data Project Masspro</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-teal-100 px-3 py-1 font-medium text-teal-700">Engineering Data</span></td>
+                                <td class="px-5 py-5">Controlled references, revision visibility, and lookup</td>
+                                <td class="px-5 py-5">PHP, MySQL, Tailwind CSS</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/engineering-data.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-pink-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">IK Digital</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-pink-100 px-3 py-1 font-medium text-pink-700">Shopfloor Quality</span></td>
+                                <td class="px-5 py-5">Scan-based work instruction and defect references</td>
+                                <td class="px-5 py-5">WP Framework, PHP, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/ik-digital.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                            <tr class="transition-colors hover:bg-red-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">IT Security Infrastructure</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-red-100 px-3 py-1 font-medium text-red-700">Security</span></td>
+                                <td class="px-5 py-5">Detection, automation, case handling, and intelligence</td>
+                                <td class="px-5 py-5">Wazuh, Shuffle, DFIR-IRIS, MISP</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/it-security.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="border-t border-slate-200 bg-slate-50 px-5 py-3 text-xs text-slate-500 sm:hidden">Swipe horizontally to compare all columns.</div>
+            </div>
         </div>
     </section>
 
@@ -1584,6 +1722,39 @@
             document.getElementById('gallery-counter').textContent = `${currentGallery.index + 1} / ${images.length}`;
         }
 
+        function setProjectView(view, persist = true) {
+            const selectedView = view === 'table' ? 'table' : 'card';
+            const cardView = document.getElementById('project-card-view');
+            const tableView = document.getElementById('project-table-view');
+            const cardButton = document.getElementById('card-view-button');
+            const tableButton = document.getElementById('table-view-button');
+
+            if (!cardView || !tableView || !cardButton || !tableButton) return;
+
+            const cardActive = selectedView === 'card';
+            cardView.classList.toggle('hidden', !cardActive);
+            tableView.classList.toggle('hidden', cardActive);
+            cardButton.setAttribute('aria-pressed', String(cardActive));
+            tableButton.setAttribute('aria-pressed', String(!cardActive));
+
+            [cardButton, tableButton].forEach((button) => {
+                button.classList.remove('bg-slate-900', 'text-white', 'shadow-sm', 'text-slate-600', 'hover:text-slate-900');
+            });
+
+            const activeButton = cardActive ? cardButton : tableButton;
+            const inactiveButton = cardActive ? tableButton : cardButton;
+            activeButton.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+            inactiveButton.classList.add('text-slate-600', 'hover:text-slate-900');
+
+            if (persist) {
+                try {
+                    localStorage.setItem('portfolio-project-view', selectedView);
+                } catch (error) {
+                    // The switch still works when browser storage is unavailable.
+                }
+            }
+        }
+
         // Initialize all project sliders
         document.addEventListener('DOMContentLoaded', () => {
             initProjectSlider('hrmshris');
@@ -1599,6 +1770,12 @@
             initProjectSlider('engdata');
             initProjectSlider('ikdigital');
             initProjectSlider('itsecurity');
+
+            try {
+                setProjectView(localStorage.getItem('portfolio-project-view') || 'card', false);
+            } catch (error) {
+                setProjectView('card', false);
+            }
 
             document.querySelectorAll('img[onclick^="openGallery"]').forEach((thumbnail) => {
                 thumbnail.tabIndex = 0;
