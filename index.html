@@ -71,6 +71,32 @@
         section[id] {
             scroll-margin-top: 6rem;
         }
+        #site-header {
+            isolation: isolate;
+        }
+        #site-header::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -0.75rem 0 -1rem;
+            pointer-events: none;
+            opacity: 0;
+            background: linear-gradient(to bottom, rgba(248, 250, 252, 0.82), rgba(248, 250, 252, 0.5) 62%, transparent);
+            -webkit-backdrop-filter: blur(16px) saturate(145%);
+            backdrop-filter: blur(16px) saturate(145%);
+            transition: opacity 220ms ease;
+        }
+        #site-header > div {
+            transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+        }
+        #site-header.is-scrolled::before {
+            opacity: 1;
+        }
+        #site-header.is-scrolled > div {
+            border-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 52px -25px rgba(15, 23, 42, 0.62);
+        }
         .site-nav-link {
             color: #64748b;
         }
@@ -1553,7 +1579,15 @@
     </div>
 
     <script>
+        const siteHeader = document.getElementById('site-header');
         const navigationLinks = [...document.querySelectorAll('[data-nav-link]')];
+
+        function syncHeaderScrollState() {
+            siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+        }
+
+        syncHeaderScrollState();
+        window.addEventListener('scroll', syncHeaderScrollState, { passive: true });
 
         function setActiveNavigation(sectionId) {
             navigationLinks.forEach((link) => {
