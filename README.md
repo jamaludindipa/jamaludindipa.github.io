@@ -21,7 +21,7 @@ Every system presented in this portfolio was independently handled end to end by
 This portfolio brings together the main project areas currently presented on the site:
 
 - Manufacturing systems: MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
-- Business applications: meeting management, checklist workflows, maintenance systems, and IT ticketing
+- Business applications: cross-department ERP analytics, meeting management, checklist workflows, maintenance systems, and IT ticketing
 - AI and data workflows: AI camera inspection, agent orchestration, and engineering data management
 - Security infrastructure: Wazuh, Shuffle, Iris, and MISP based security environment
 
@@ -29,6 +29,7 @@ This portfolio brings together the main project areas currently presented on the
 
 - `projects/hrms-hris.html` - HRMS-HRIS
 - `projects/meta.html` - META - Manufacturing Execution & Traceability Application
+- `projects/dashboard-erp-analytics.html` - Dashboard ERP Analytics
 - `projects/apjm.html` - Automatic Preventive Jig Welding Assy
 - `projects/mom.html` - Mom (Minute Of Meeting Online)
 - `projects/apdm.html` - Automatic Preventive Dies Maintenance
@@ -58,6 +59,8 @@ Flagship projects are the clearest representation of my current direction and st
 
 ### Internal Business Applications
 
+- `Dashboard ERP Analytics`
+  Internal MVP consolidating PPIC, Management, and IT operational analysis into one portal with ERP synchronization, KPI visualization, drill-down detail, and export workflows.
 - `Mom (Minute Of Meeting Online)`
   Flagship internal workflow platform for scheduling meetings, documenting outcomes, assigning follow-ups, and keeping searchable internal records.
 - `Ceklist Management System`
@@ -162,6 +165,7 @@ jamalgithub/
 ├── index.html
 ├── projectimg/
 │   ├── MES Traceability/
+│   ├── Dashboard All Dept/
 │   ├── HRMS-HRIS/
 │   ├── APJM/
 │   ├── MOM/

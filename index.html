@@ -652,6 +652,58 @@
                     </div>
                 </div>
 
+                <!-- Dashboard ERP Analytics Project -->
+                <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 p-6 sm:p-8">
+                            <div class="text-blue-700 text-sm font-semibold mb-2">INTERNAL MVP • CROSS-DEPARTMENT ANALYTICS</div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">Dashboard ERP Analytics</h3>
+                            <p class="text-sm font-medium text-gray-500 mb-4">Consolidated PPIC, Management, and IT Operational Analysis in One Enterprise Dashboard Portal</p>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Built to consolidate departmental operational analysis into one role-oriented portal, connecting ERP-synchronized data with KPI monitoring, visual trends, drill-down detail, and export workflows for PPIC, Management, and IT.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Internal MVP</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full">Enterprise Analytics</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">ERP Data Sync</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Laravel</span>
+                                <span class="px-3 py-1 bg-sky-100 text-sky-700 text-sm rounded-full">React</span>
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm rounded-full">Tailwind CSS</span>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-700 text-sm rounded-full">MySQL</span>
+                            </div>
+                            <a href="projects/dashboard-erp-analytics.html" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                                Project Details <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="project-slider-container" data-project="dashboarderp">
+                                <div class="project-slider-track">
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img loading="lazy" decoding="async" src="projectimg/Dashboard All Dept/2026-08-31_10h09_42.webp" alt="Dashboard ERP vendor claim analytics" onclick="openGallery('dashboarderp', 0)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Dashboard All Dept/2026-08-31_10h10_29.webp" alt="Dashboard ERP IT checklist compliance analytics" onclick="openGallery('dashboarderp', 1)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Dashboard All Dept/2026-08-31_10h10_33.webp" alt="Dashboard ERP management delivery and efficiency analytics" onclick="openGallery('dashboarderp', 2)">
+                                            <img loading="lazy" decoding="async" src="projectimg/Dashboard All Dept/2026-08-31_10h10_51.webp" alt="Dashboard ERP outstanding delivery drill-down" onclick="openGallery('dashboarderp', 3)">
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="grid">
+                                            <img loading="lazy" decoding="async" src="projectimg/Dashboard All Dept/2026-09-01_16h53_32.webp" alt="Dashboard ERP cross-department navigation" onclick="openGallery('dashboarderp', 4)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" aria-label="Previous Dashboard ERP screenshots" class="slider-btn prev" onclick="moveProjectSlider('dashboarderp', -1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button type="button" aria-label="Next Dashboard ERP screenshots" class="slider-btn next" onclick="moveProjectSlider('dashboarderp', 1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="slider-dots" id="dashboarderp-dots"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- APJM Project -->
                 <div class="project-card bg-gray-50 rounded-[5px] overflow-hidden shadow-lg fade-in">
                     <div class="md:flex">
@@ -1258,6 +1310,14 @@
                                 <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
                                 <td class="px-5 py-5"><a href="projects/meta.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
                             </tr>
+                            <tr class="transition-colors hover:bg-blue-50/60">
+                                <th scope="row" class="px-5 py-5 font-bold text-slate-900">Dashboard ERP Analytics</th>
+                                <td class="px-5 py-5"><span class="rounded-full bg-blue-100 px-3 py-1 font-medium text-blue-700">Enterprise Analytics</span></td>
+                                <td class="px-5 py-5">ERP-synchronized KPIs, department dashboards, drill-down, and export</td>
+                                <td class="px-5 py-5">Laravel, React, Tailwind CSS, MySQL</td>
+                                <td class="px-5 py-5 font-medium text-cyan-700">Solo end-to-end</td>
+                                <td class="px-5 py-5"><a href="projects/dashboard-erp-analytics.html" class="whitespace-nowrap font-semibold text-blue-600 hover:text-blue-800">View case study →</a></td>
+                            </tr>
                             <tr class="transition-colors hover:bg-sky-50/60">
                                 <th scope="row" class="px-5 py-5 font-bold text-slate-900">Automatic Preventive Jig Welding Assy</th>
                                 <td class="px-5 py-5"><span class="rounded-full bg-sky-100 px-3 py-1 font-medium text-sky-700">Manufacturing</span></td>
@@ -1740,6 +1800,13 @@
                 'projectimg/MES Traceability/2026-07-21_15h25_46.png',
                 'projectimg/MES Traceability/2026-07-21_15h58_26.png'
             ],
+            dashboarderp: [
+                'projectimg/Dashboard All Dept/2026-08-31_10h09_42.webp',
+                'projectimg/Dashboard All Dept/2026-08-31_10h10_29.webp',
+                'projectimg/Dashboard All Dept/2026-08-31_10h10_33.webp',
+                'projectimg/Dashboard All Dept/2026-08-31_10h10_51.webp',
+                'projectimg/Dashboard All Dept/2026-09-01_16h53_32.webp'
+            ],
             apjm: [
                 'projectimg/APJM/2026-08-22_07h20_37.webp',
                 'projectimg/APJM/2026-08-22_07h20_41.webp',
@@ -1964,6 +2031,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             initProjectSlider('hrmshris');
             initProjectSlider('meta');
+            initProjectSlider('dashboarderp');
             initProjectSlider('apjm');
             initProjectSlider('mom');
             initProjectSlider('apdm');
