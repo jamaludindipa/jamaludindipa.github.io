@@ -20,13 +20,14 @@ Every system presented in this portfolio was independently handled end to end by
 
 This portfolio brings together the main project areas currently presented on the site:
 
-- Manufacturing systems: MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
-- Business applications: cross-department ERP analytics, meeting management, checklist workflows, maintenance systems, and IT ticketing
+- Manufacturing systems: production CMMS, MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
+- Business applications: cross-department ERP analytics, meeting management, checklist workflows, and IT ticketing
 - AI and data workflows: AI camera inspection, agent orchestration, and engineering data management
 - Security infrastructure: Wazuh, Shuffle, Iris, and MISP based security environment
 
 ## Project Directory
 
+- `projects/cmms-maintenance.html` - CMMS Maintenance System
 - `projects/hrms-hris.html` - HRMS-HRIS
 - `projects/meta.html` - META - Manufacturing Execution & Traceability Application
 - `projects/dashboard-erp-analytics.html` - Dashboard ERP Analytics
@@ -48,6 +49,8 @@ Flagship projects are the clearest representation of my current direction and st
 
 ### Manufacturing & Operations
 
+- `CMMS Maintenance System`
+  Production go-live maintenance platform combining a Vue SPA management portal and station-based shopfloor kiosks for work orders, preventive maintenance, machine status, spare parts, technician capability, and MTTR/MTBF reporting. Built with Laravel, Vue, PostgreSQL, and Linux Server deployment.
 - `META - Manufacturing Execution & Traceability Application`
   Flagship manufacturing platform connecting work order execution, material readiness, IoT/PLC-integrated shopfloor production, warehouse movement, quality inspection, finish good delivery, and upstream-downstream traceability.
 - `ProdControl Stamping`
@@ -153,7 +156,7 @@ Additional applications in this portfolio also have dedicated detail pages so re
 ## Technologies Used In This Portfolio
 
 - Frontend: HTML5, Tailwind CSS, JavaScript, Font Awesome
-- Backend and application stack across showcased systems: Laravel, PHP, React, Python, Flask, MySQL
+- Backend and application stack across showcased systems: Laravel, PHP, Vue, React, Python, Flask, MySQL, PostgreSQL
 - AI and inspection stack: OpenCV, YOLO, agent orchestration workflows
 - Security stack: Wazuh, Shuffle, Iris, MISP
 - Tooling: Node.js, Puppeteer, GitHub Pages
@@ -164,6 +167,7 @@ Additional applications in this portfolio also have dedicated detail pages so re
 jamalgithub/
 ├── index.html
 ├── projectimg/
+│   ├── Aplikasi CMMS Maintenance/
 │   ├── MES Traceability/
 │   ├── Dashboard All Dept/
 │   ├── HRMS-HRIS/
