@@ -20,13 +20,14 @@ Every system presented in this portfolio was independently handled end to end by
 
 This portfolio brings together the main project areas currently presented on the site:
 
-- Manufacturing systems: production CMMS, MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
+- Manufacturing systems: delivery early warning, production CMMS, MES traceability, stamping operations, OEE, warehouse movement, and inspection flows
 - Business applications: cross-department ERP analytics, meeting management, checklist workflows, and IT ticketing
 - AI and data workflows: AI camera inspection, agent orchestration, and engineering data management
 - Security infrastructure: Wazuh, Shuffle, Iris, and MISP based security environment
 
 ## Project Directory
 
+- `projects/ews-delivery.html` - EWS Delivery
 - `projects/cmms-maintenance.html` - CMMS Maintenance System
 - `projects/hrms-hris.html` - HRMS-HRIS
 - `projects/meta.html` - META - Manufacturing Execution & Traceability Application
@@ -49,6 +50,8 @@ Flagship projects are the clearest representation of my current direction and st
 
 ### Manufacturing & Operations
 
+- `EWS Delivery`
+  Logistics early-warning and delivery control system connecting PPIC planning, dispatch, gate events, driver trips, realtime fleet monitoring, route and ETA risk, part-tag verification, POD, and stop-line risk visibility.
 - `CMMS Maintenance System`
   Production go-live maintenance platform combining a Vue SPA management portal and station-based shopfloor kiosks for work orders, preventive maintenance, machine status, spare parts, technician capability, and MTTR/MTBF reporting. Built with Laravel, Vue, PostgreSQL, and Linux Server deployment.
 - `META - Manufacturing Execution & Traceability Application`
@@ -167,6 +170,7 @@ Additional applications in this portfolio also have dedicated detail pages so re
 jamalgithub/
 ├── index.html
 ├── projectimg/
+│   ├── EwsDelivery/
 │   ├── Aplikasi CMMS Maintenance/
 │   ├── MES Traceability/
 │   ├── Dashboard All Dept/
